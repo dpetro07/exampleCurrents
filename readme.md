@@ -29,9 +29,9 @@ This project is dedicated to providing any user with current bitcoin prices, in 
      API: https://www.flickr.com/services/api/
 
   ###Technologies We'll Use:
-     HTML
-     CSS
-     BootStrap
-     Javascript
-     jQuery
-     FireBase
+   HTML
+   CSS
+   BootStrap
+   Javascript
+   jQuery
+   FireBase
