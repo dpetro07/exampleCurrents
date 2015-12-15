@@ -9,31 +9,31 @@ This project is dedicated to providing any user with current bitcoin prices, in 
 
 ###API Links we might use:
    Realtime Bitcoin: 
-   Website: https://bitcoincharts.com/
-   API:        https://bitcoincharts.com/about/markets-api/
+   * Website: https://bitcoincharts.com/
+   * API:        https://bitcoincharts.com/about/markets-api/
 
 ###High Charts:
-   Website: http://www.highcharts.com/
-   API:        http://api.highcharts.com/highcharts
+   * Website: http://www.highcharts.com/
+   * API:        http://api.highcharts.com/highcharts
 
 ###Reddit:
-   Website: https://www.reddit.com/
-   API:        https://www.reddit.com/dev/api
+   * Website: https://www.reddit.com/
+   * API:        https://www.reddit.com/dev/api
 
 ###Flickr:
-     Website: https://www.flickr.com/
-     API:        https://www.flickr.com/services/api/
+     * Website: https://www.flickr.com/
+     * API:        https://www.flickr.com/services/api/
 
 ###Coindesk:
-    Website: http://www.coindesk.com/
-    API:        http://www.coindesk.com/api/
+    * Website: http://www.coindesk.com/
+    * API:        http://www.coindesk.com/api/
 
   ###Technologies We'll Use:
-     HTML
-     CSS
-     BootStrap
-     Javascript
-     jQuery
-     FireBase
+     * HTML
+     * CSS
+     * BootStrap
+     * Javascript
+     * jQuery
+     * FireBase
 
 
