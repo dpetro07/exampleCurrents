@@ -26,7 +26,7 @@ This project is dedicated to providing any user with current bitcoin prices, in 
 
   ###Flickr:
      Website: https://www.flickr.com/
-     API:        https://www.flickr.com/services/api/
+     API: https://www.flickr.com/services/api/
 
   ###Technologies We'll Use:
      HTML
