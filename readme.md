@@ -35,3 +35,5 @@ This project is dedicated to providing any user with current bitcoin prices, in 
      Javascript
      jQuery
      FireBase
+
+
