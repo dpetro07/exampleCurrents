@@ -20,13 +20,13 @@ This project is dedicated to providing any user with current bitcoin prices, in 
    Website: https://www.reddit.com/
    API:        https://www.reddit.com/dev/api
 
-###Twitter:
-   Website: https://twitter.com/
-   API:        https://dev.twitter.com/overview/documentation
-
-  ###Flickr:
+###Flickr:
      Website: https://www.flickr.com/
      API:        https://www.flickr.com/services/api/
+
+###Coindesk:
+    Website: http://www.coindesk.com/
+    API:        http://www.coindesk.com/api/
 
   ###Technologies We'll Use:
      HTML
