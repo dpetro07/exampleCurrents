@@ -23,3 +23,11 @@ Twitter:
   Flickr:
   Website: https://www.flickr.com/
   API:        https://www.flickr.com/services/api/
+
+  Technologies We'll Use:
+    HTML
+    CSS
+    BootStrap
+    Javascript
+    jQuery
+    FireBase
