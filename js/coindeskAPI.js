@@ -44,6 +44,8 @@ $(document).ready(function() {
     //sets a time interval for how often we change the price difference, but we'll only check yesterdays 
     //price once when the page loads, as this speeds up the application and might only cause an issue when the day changes.
     //later we may add a setInterval to rerun this every half hour or so.
+    //for some reason the json data for yesterdays price takes slightly longer to retrieve, and can produce an 
+    //error if its referenced too early, so I added a setTimeout of 30 miliseconds to give it some time to load
     $.ajax({
         dataType: "json",
         type: "GET",
@@ -52,8 +54,8 @@ $(document).ready(function() {
             currency: 'USD'
         },
         success: function(data) {
-
-            changeSinceYesterday(data, "USD", USDPrice, "#USDPriceDiff");
+            setTimeout(function (){changeSinceYesterday(data, "USD", USDPrice, "#USDPriceDiff")
+          }, 30);
             setInterval(function() {
                 changeSinceYesterday(data, "USD", USDPrice, "#USDPriceDiff")
             }, 15000);
@@ -72,9 +74,9 @@ $(document).ready(function() {
             currency: 'GBP'
         },
         success: function(data) {
-
-            changeSinceYesterday(data, "GBP", GBPPrice, "#GBPPriceDiff");
-            setTimeout(function() {
+            setTimeout(function (){changeSinceYesterday(data, "GBP", GBPPrice, "#GBPPriceDiff")
+          }, 30);
+            setInterval(function() {
                 changeSinceYesterday(data, "GBP", GBPPrice, "#GBPPriceDiff")
             }, 15000);
         },
@@ -92,8 +94,8 @@ $(document).ready(function() {
             currency: 'EUR'
         },
         success: function(data) {
-
-            changeSinceYesterday(data, "EUR", EURPrice, "#EURPriceDiff");
+            setTimeout(function (){changeSinceYesterday(data, "EUR", EURPrice, "#EURPriceDiff")
+          }, 30);
             setInterval(function() {
                 changeSinceYesterday(data, "EUR", EURPrice, "#EURPriceDiff")
             }, 15000);
