@@ -44,6 +44,7 @@ $(document).ready(function() {
     //sets a time interval for how often we change the price difference, but we'll only check yesterdays 
     //price once when the page loads, as this speeds up the application and might only cause an issue when the day changes.
     //later we may add a setInterval to rerun this every half hour or so.
+    $.ajax({
         dataType: "json",
         type: "GET",
         url: "https://api.coindesk.com/v1/bpi/historical/close.json?for=yesterday",
