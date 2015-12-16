@@ -4,6 +4,7 @@
   <title>BitCurrents - Real-Time and Historical BitCoin Analytics</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -30,15 +31,47 @@
 
     <div class="container">
 
-      <div class="starter-template">
-        <h1>Bootstrap starter template</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+      <div class="wrapper">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="bitPrice">
+              <h3>
+              Current Price
+              </h3> 
+              <h4>
+                <span id="currentPriceUSD">
+                  
+                </span>
+                <span id="USDPriceDiff">
+                    
+                </span>
+              </h4>
+              <h4>
+                <span class="currentPriceGBP">
+                  
+                </span>
+                <span id="GBPPriceDiff">
+                    
+                </span>
+              </h4>
+              <h4>
+                <span class="currentPriceEUR">
+                  
+                </span>
+                <span id="EURPriceDiff">
+                    
+                </span>
+              </h4>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div><!-- /.container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/coindeskAPI.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>

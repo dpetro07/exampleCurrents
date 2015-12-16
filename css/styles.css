@@ -1,7 +1,13 @@
 body {
   padding-top: 50px;
 }
-.starter-template {
+.wrapper {
   padding: 40px 15px;
   text-align: center;
+}
+.bitPrice {
+  border: solid black;
+  height:180px;
+  text-align: left;
+  padding: 10px;
 }
