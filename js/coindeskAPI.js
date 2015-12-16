@@ -34,7 +34,7 @@ function main() {
 
 //this function will return the current price and symbol of that currency.
  function getCurrentPrice(data, currency) {
-  var currentPrice = Math.round(data.bpi[currency].rate_float * 100) / 100;
+  var currentPrice = data.bpi[currency].rate_float.toFixed(2);
   var currentSymbol = data.bpi[currency].symbol;
   return [currentSymbol, currentPrice];
  }
@@ -94,9 +94,9 @@ function main() {
 //calculate the change in price. If positive we have a plus sign, black font and an up arrow
 //if negative we have red font, a minus sign, and a down arrow
  function changeSinceYesterday(data, currency, current, id) {
-  var yesterday = Math.round(data.bpi[Object.keys(data.bpi)[0]] * 100) / 100;
+  var yesterday = data.bpi[Object.keys(data.bpi)[0]].toFixed(2);
 
-  var diff = Math.round((current[1] - yesterday) * 100) / 100;
+  var diff = (current[1] - yesterday).toFixed(2);
   if (diff < 0) {
     $(id).css('color', 'red');
     $(id).html(diff);
