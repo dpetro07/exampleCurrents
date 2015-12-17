@@ -74,7 +74,7 @@ $(document).ready(function() {
         type: "GET",
         url: "https://api.coindesk.com/v1/bpi/historical/close.json?for=yesterday",
         data: {
-            currency: 'GBP'
+        currency: 'GBP'
         },
         success: function(data) {
             var yesterdaysGBP = data.bpi[Object.keys(data.bpi)[0]].toFixed(2);

@@ -5,14 +5,8 @@ body {
   padding: 40px 15px;
   text-align: center;
 }
-.bitPrice {
-  border: solid black;
-  height:180px;
-  text-align: left;
-  padding: 10px;
-}
 
-.priceConverter {
+.priceConverter, .bitPrice, .historicalDataSection {
   border: solid black;
   height:180px;
   text-align: left;
