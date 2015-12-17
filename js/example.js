@@ -6,16 +6,16 @@ $(function() {
             beyondExtremes: true
         },
         xAxis: {
-            events: {
-                setExtremes: function(e) {
-                    /*Could fetch new data for the new extremes here*/
+        events: {
+          setExtremes: function(e) {
+            /*Could fetch new data for the new extremes here*/
                     
                     $('#report').html('<b>Set extremes:</b> e.min: '+ Highcharts.dateFormat(null, e.min) +
-                        ' | e.max: '+ Highcharts.dateFormat(null, e.max) + ' | e.trigger: ' + e.trigger);
-                }
-            },
-            ordinal: false
+              ' | e.max: '+ Highcharts.dateFormat(null, e.max) + ' | e.trigger: ' + e.trigger);
+          }
         },
+            ordinal: false
+      },
         title : {
             enabled : false
         },
