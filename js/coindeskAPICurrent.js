@@ -117,16 +117,16 @@ $(document).ready(function() {
         var diff = (current[1] - yesterday).toFixed(2);
         var percent;
         if (diff < 0) {
-            percent = ((diff * -1) / current[1]).toFixed(3);
+            percent = ((diff * -1) / current[1]).toFixed(4);
             $(id).css('color', 'red');
             $(id).html(diff);
-            $(id).append('<i class="fa fa-chevron-down"></i>');
+            $(id).append(' <i class="fa fa-chevron-down"></i>');
             $(id).append(" <sub>" + percent + "%</sub>");
         } else {
-            percent = diff / current[1].toFixed(3);
+            percent = diff / current[1].toFixed(4);
             $(id).css('color', 'black');
             $(id).html("+" + diff);
-            $(id).append('<i class="fa fa-chevron-up"></i>');
+            $(id).append(' <i class="fa fa-chevron-up"></i>');
             $(id).append(" <sup>" + percent + "%</sup>");
         }
     }
