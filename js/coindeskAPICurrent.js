@@ -1,8 +1,10 @@
-$(document).ready(function() {
-    //global vars for the current prices of bitcoin in different currencies
     var USDPrice;
     var GBPPrice;
     var EURPrice;
+
+$(document).ready(function() {
+    //global vars for the current prices of bitcoin in different currencies
+    
     //wrapping most of code into a function we call setInterval on. Every 20 seconds the data is updated
     main();
     setInterval(main, 15000);
@@ -54,10 +56,11 @@ $(document).ready(function() {
             currency: 'USD'
         },
         success: function(data) {
-            setTimeout(function (){changeSinceYesterday(data, "USD", USDPrice, "#USDPriceDiff")
-          }, 30);
+            var yesterdaysUSD = data.bpi[Object.keys(data.bpi)[0]].toFixed(2);
+            setTimeout(function (){changeSinceYesterday(yesterdaysUSD, "USD", USDPrice, "#USDPriceDiff")
+          }, 200);
             setInterval(function() {
-                changeSinceYesterday(data, "USD", USDPrice, "#USDPriceDiff")
+                changeSinceYesterday(yesterdaysUSD, "USD", USDPrice, "#USDPriceDiff")
             }, 15000);
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -74,10 +77,11 @@ $(document).ready(function() {
             currency: 'GBP'
         },
         success: function(data) {
-            setTimeout(function (){changeSinceYesterday(data, "GBP", GBPPrice, "#GBPPriceDiff")
-          }, 30);
+            var yesterdaysGBP = data.bpi[Object.keys(data.bpi)[0]].toFixed(2);
+            setTimeout(function (){changeSinceYesterday(yesterdaysGBP, "GBP", GBPPrice, "#GBPPriceDiff")
+          }, 200);
             setInterval(function() {
-                changeSinceYesterday(data, "GBP", GBPPrice, "#GBPPriceDiff")
+                changeSinceYesterday(yesterdaysGBP, "GBP", GBPPrice, "#GBPPriceDiff")
             }, 15000);
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -94,10 +98,11 @@ $(document).ready(function() {
             currency: 'EUR'
         },
         success: function(data) {
-            setTimeout(function (){changeSinceYesterday(data, "EUR", EURPrice, "#EURPriceDiff")
-          }, 30);
+            var yesterdaysEUR = data.bpi[Object.keys(data.bpi)[0]].toFixed(2);
+            setTimeout(function (){changeSinceYesterday(yesterdaysEUR, "EUR", EURPrice, "#EURPriceDiff")
+          }, 200);
             setInterval(function() {
-                changeSinceYesterday(data, "EUR", EURPrice, "#EURPriceDiff")
+                changeSinceYesterday(yesterdaysEUR, "EUR", EURPrice, "#EURPriceDiff")
             }, 15000);
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -107,18 +112,22 @@ $(document).ready(function() {
 
     //calculate the change in price. If positive we have a plus sign, black font and an up arrow
     //if negative we have red font, a minus sign, and a down arrow
-    function changeSinceYesterday(data, currency, current, id) {
-        var yesterday = data.bpi[Object.keys(data.bpi)[0]].toFixed(2);
+    function changeSinceYesterday(yesterday, currency, current, id) {
 
         var diff = (current[1] - yesterday).toFixed(2);
+        var percent;
         if (diff < 0) {
+            percent = ((diff * -1) / current[1]).toFixed(3);
             $(id).css('color', 'red');
             $(id).html(diff);
             $(id).append('<i class="fa fa-chevron-down"></i>');
+            $(id).append(" <sub>" + percent + "%</sub>");
         } else {
+            percent = diff / current[1].toFixed(3);
             $(id).css('color', 'black');
             $(id).html("+" + diff);
-            $(id).append('<i class="fa fa-chevron-up"></i>')
+            $(id).append('<i class="fa fa-chevron-up"></i>');
+            $(id).append(" <sup>" + percent + "%</sup>");
         }
     }
 
