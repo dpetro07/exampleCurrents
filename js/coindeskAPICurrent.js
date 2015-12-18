@@ -24,7 +24,7 @@ $(document).ready(function() {
                 displayCurrentPrices();
             },
             error: function(jqXHR, textStatus, errorThrown) {
-                alert("Something went wrong.");
+                console.log("Unable to retrieve current price data, some depencies failed to load.");
             }
         });
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
             }, 15000);
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            alert("Something went wrong.");
+            console.log("Unable to retrieve yesterday's USD price data, some depencies failed to load.");
         }
     });
 
@@ -85,7 +85,7 @@ $(document).ready(function() {
             }, 15000);
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            alert("Something went wrong.");
+            console.log("Unable to retrieve yesterday's GBP price data, some depencies failed to load.");
         }
     });
 
@@ -106,7 +106,7 @@ $(document).ready(function() {
             }, 15000);
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            alert("Something went wrong.");
+            console.log("Unable to retrieve yesterday's EUR price data, some depencies failed to load.");
         }
     });
 
@@ -123,7 +123,7 @@ $(document).ready(function() {
             $(id).append(' <i class="fa fa-chevron-down"></i>');
             $(id).append(" <sub>" + percent + "%</sub>");
         } else {
-            percent = diff / current[1].toFixed(4);
+            percent = (diff / current[1]).toFixed(4);
             $(id).css('color', 'black');
             $(id).html("+" + diff);
             $(id).append(' <i class="fa fa-chevron-up"></i>');

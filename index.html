@@ -3,6 +3,7 @@
 <head>
   <title>BitCurrents - Real-Time and Historical BitCoin Analytics</title>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/metallic.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
@@ -91,6 +92,17 @@
         <div class = "row">
           <div class="col-md-9 col-md-offset-2">
             <div class="historicalDataSection">
+              <h3>Historical Data</h3>
+               <input type ="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
+               <input type ="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
+               <div class="btn-group">
+                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="historicalCurrency">USD</span><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li id="USDCur"><a>USD</a></li>
+                      <li><a id="GBPCur">GBP</a></li>
+                      <li><a id="EURCur">EUR</a></li>
+                    </ul>
+                  </div>
             </div>
           </div>
         </div>
@@ -100,6 +112,7 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/zebra_datepicker.js"></script>
 <script type="text/javascript" src="js/coindeskAPICurrent.js"></script>
 <script type="text/javascript" src="js/coindeskCurrencyConverter.js"></script>
 <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>

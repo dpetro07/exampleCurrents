@@ -16,3 +16,7 @@ body {
 input {
   text-align: center; 
 } 
+
+.date-pick {
+  width: 150px;
+}
