@@ -1,4 +1,33 @@
 $(function() {
+
+    $(function () {
+    $('#container').highcharts({
+        data: {
+            csv: document.getElementById('data').innerHTML
+        },
+        yAxis: {
+            title: {
+                text: 'Bitcoin prices'
+            }
+        },
+        plotOptions: {
+            series: {
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        title: {
+            text: 'Historical Bitcoin Pricing'
+        },
+        subtitle: {
+            text: 'Auto-detection of <em>mm/dd/YYYY</em> dates in Highcharts Data module'
+        }
+    });
+});
+
+
+    
    
     $('#container').highcharts('StockChart', {
         rangeSelector: {
@@ -10,8 +39,11 @@ $(function() {
                 setExtremes: function(e) {
                     /*Could fetch new data for the new extremes here*/
                     
-                    $('#report').html('<b>Set extremes:</b> e.min: '+ Highcharts.dateFormat(null, e.min) +
-                        ' | e.max: '+ Highcharts.dateFormat(null, e.max) + ' | e.trigger: ' + e.trigger);
+
+
+
+
+
                 }
             },
             ordinal: false
