@@ -9,6 +9,12 @@ var tbns = 0;
 var maxtbns = 7;
 // defines maximum number of threads to return
 var maxrddts = 7;
+var startToUnix = moment(startingDate, "M-D-YYYY H:mm").valueOf();
+var endToUnix = moment(endingDate, "M-D-YYYY H:mm").valueOf();
+console.log(startToUnix);
+console.log(startToUnix);
+
+//if startingDate !=== "" && endingDate !=== "") {
 
 // makes call and gets json 
 $.getJSON(
