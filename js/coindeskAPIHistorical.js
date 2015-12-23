@@ -3,22 +3,30 @@ var endingDate;
 var startingDatePrefix = "start=";
 var endingDatePrefix = "&end=";
 var histCur;
+var histObject;
 //setting up some global variables that will need to be used by several functions
 
-//dateChanger checks that both date fields are filled. if so, we call the getHistData function, also sets the global variables 
+//dateChanger checks that both date fields are filled using the formValidator() functio. if so, we call the getHistData function, also sets the global variables 
 //startingDate and endingDate
 
 function dateChanger() {
+    if (formValidator() === true) {
+        var ajaxStart = startingDatePrefix + startingDate;
+        var ajaxEnd = endingDatePrefix + endingDate;
+        getHistData(histCur, ajaxStart, ajaxEnd);
+    }
+}
+
+//checks to see that both forms are filled before taking any action. 
+function formValidator() {
     if ($("#startingDate").val() !== "" && $("#endingDate").val() !== "") {
         startingDate = $("#startingDate").val();
         console.log(startingDate);
         endingDate = $("#endingDate").val();
         console.log(endingDate);
-        var ajaxStart = startingDatePrefix + startingDate;
-        var ajaxEnd = endingDatePrefix + endingDate;
-        getHistData(histCur, ajaxStart, ajaxEnd);
+        return true;
     } else {
-        return;
+        return false
     }
 
 }
@@ -36,11 +44,11 @@ function getHistData(cur, start, end) {
             currency: histCur
         },
         success: function(data) {
-            console.log(data);
+            histObject = data.bpi;
+            console.log(histObject);
         },
         error: function(jqXHR, textStatus, errorThrown) {
             console.log("Unable to retrieve data, some depencies could not be loaded.");
-            scopeChecker();
         }
     });
 
@@ -73,6 +81,8 @@ function scopeChecker() {
             alert("Choose an end date that is greater than your start date.");
             $("#startingDate").val("");
             $("#endingDate").val("");
+        } else {
+            dateChanger();
         }
     }
 
@@ -107,7 +117,7 @@ $(document).ready(function() {
     min: '2010-07-17',
     max: yesterdaysDate,
         onSet: function (event) { //occurs when something is selected
-            dateChanger()
+            dateChanger();
             if(event.highlight == undefined){  //is false when changing months         
             $(oldInput).next().remove(); //hide picker
             $(newInput).val($(oldInput).val()); //save value from weird generated input
@@ -128,7 +138,7 @@ $(document).ready(function() {
     min: '2010-07-17',
     max: yesterdaysDate,
         onSet: function (event) { //occurs when something is selected
-            dateChanger()
+            scopeChecker()
             if(event.highlight == undefined){  //is false when changing months         
             $(oldInput).next().remove(); //hide picker
             $(newInput).val($(oldInput).val()); //save value from weird generated input

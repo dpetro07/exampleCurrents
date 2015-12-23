@@ -1,46 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>BitCurrents - Real-Time and Historical BitCoin Analytics</title>
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/themes/default.css">
-  <link rel="stylesheet" type="text/css" href="css/themes/default.date.css">
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title>BitCurrents - Real-Time and Historical BitCoin Analytics</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/default.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/default.date.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-
     <div class="container">
 
-      <div class="wrapper">
-        <div class="row">
-          <div class="col-md-3 col-md-offset-2">
-            <div class="bitPrice">
-              <h3>
+
+            <div class="row-fluid header">
+                <div class="col-md-3">
+                    <div class="bitPrice">
+                        <h3>
               Current Price
-              </h3> 
-              <h4>
+              </h3>
+                        <h4>
                 <span id="currentPriceUSD">
                   
                 </span>
@@ -48,7 +29,7 @@
                     
                 </span>
               </h4>
-              <h4>
+                        <h4>
                 <span class="currentPriceGBP">
                   
                 </span>
@@ -56,7 +37,7 @@
                     
                 </span>
               </h4>
-              <h4>
+                        <h4>
                 <span class="currentPriceEUR">
                   
                 </span>
@@ -64,63 +45,84 @@
                     
                 </span>
               </h4>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-md-9 priceCharts">
+                        <h3>PriceCharts Go Here</h3>
+                        <div class="chartContainer">
+
+                        </div>
+                      </div>
+                      <div class="col-md-3 historicalDataSection">
+                        <h4>Historical Data</h4>
+                        <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
+                        <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
+                        <div class="btn-group">
+                          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="historicalCurrency">USD</span><span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li id="USDCur"><a>USD</a></li>
+                            <li><a id="GBPCur">GBP</a></li>
+                            <li><a id="EURCur">EUR</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                        
+                    </div>
+                </div>
+                <div class="row currencyConvert">
+                  <div class="col-md-6">
+                    <div class="priceConverter">
+                      <form class="form-inline">
+                        <div class="form-group">
+                          <label class="sr-only" for="bitCoinStarting">Bitcoin</label>
+                          <input type="text" class="form-control decimal" id="bitCoinStarting" value = "">
+                        </div>
+                        <div class="form-group">
+                          <label class="sr-only" for="realCurrency">Real Currency</label>
+                            <span>BitCoin=</span>
+                          <input type="text" class="form-control decimal" id="realCurrency" value = "">
+                        </div>
+                        <div class="btn-group">
+                          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="selectedCurrency">USD</span><span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li id="USDConvert"><a>USD</a></li>
+                            <li><a id="GBPConvert">GBP</a></li>
+                            <li><a id="EURConvert">EUR</a></li>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-6">
-              <div class="priceConverter">
-                <form class="form-inline">
-                  <div class="form-group">
-                    <label class="sr-only" for="bitCoinStarting">Bitcoin</label>
-                    <input type="text" class="form-control decimal" id="bitCoinStarting" value = "">
-                  </div>
-                  <div class="form-group">
-                    <label class="sr-only" for="realCurrency">Real Currency</label>
-                    XBT =
-                    <input type="text" class="form-control decimal" id="realCurrency" value = "">
-                  </div>
-                  <div class="btn-group">
-                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="selectedCurrency">USD</span><span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li id="USDConvert"><a>USD</a></li>
-                      <li><a id="GBPConvert">GBP</a></li>
-                      <li><a id="EURConvert">EUR</a></li>
-                    </ul>
-                  </div>
-                </form>
+
+            <div class="mainContent">
+              <div class="row">
+                <div class="col-md-8 news">
+                  <h4>News Goes Here</h4>
+                </div>
+                <div class="col-md-4 tweets">
+                  <h4>Tweets Go Here</h4>
+                </div>
               </div>
             </div>
-        </div>
-        <div class = "row">
-          <div class="col-md-9 col-md-offset-2">
-            <div class="historicalDataSection">
-              <h3>Historical Data</h3>
-               <input type ="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
-               <input type ="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
-               <div class="btn-group">
-                    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="historicalCurrency">USD</span><span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                      <li id="USDCur"><a>USD</a></li>
-                      <li><a id="GBPCur">GBP</a></li>
-                      <li><a id="EURCur">EUR</a></li>
-                    </ul>
-                  </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-    </div><!-- /.container -->
+        </div>
+        <!-- /.container -->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script type="text/javascript" src="js/picker.js"></script>
-<script type="text/javascript" src="js/picker.date.js"></script>
-<script type="text/javascript" src="js/legacy.js"></script>
-<script type="text/javascript" src="js/coindeskAPICurrent.js"></script>
-<script type="text/javascript" src="js/coindeskCurrencyConverter.js"></script>
-<script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
-</script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/picker.js"></script>
+        <script type="text/javascript" src="js/picker.date.js"></script>
+        <script type="text/javascript" src="js/legacy.js"></script>
+        <script type="text/javascript" src="js/coindeskAPICurrent.js"></script>
+        <script type="text/javascript" src="js/coindeskCurrencyConverter.js"></script>
+        <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+        </script>
 </body>
+
 </html>

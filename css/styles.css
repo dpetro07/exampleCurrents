@@ -1,22 +1,50 @@
-body {
-  padding-top: 50px;
-}
-.wrapper {
-  padding: 40px 15px;
-  text-align: center;
+* {
+  font-family: Roboto;
 }
 
 .priceConverter, .bitPrice, .historicalDataSection {
-  border: solid black;
-  height:180px;
+
+
   text-align: left;
-  padding: 10px;
+
 }
 
-input {
+.btn-primary {
+  background-color: #0A5480;
+}
+
+.priceCharts {
+  text-align: center;
+}
+
+input[type="text"] {
   text-align: center; 
+  background-color:#FFD971;
 } 
 
 .date-pick {
   width: 150px;
 }
+
+
+.header {
+
+}
+
+.decimal {
+  width: 150px;
+}
+ .header, .jumbotron {
+  background-color: #F7941A;
+  padding-bottom: 5px;
+  padding-top: 3px;
+ }
+
+ .mainContent {
+  color: white;
+ }
+
+ body {
+  background-color: #367CA6;
+ }
+
