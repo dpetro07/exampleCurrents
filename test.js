@@ -1,25 +1,34 @@
 
 // delcares subreddit to construct url for call
 var subreddit = 'bitcoin';
+var searchTerm = 'bitcoin';
+var url = "https://www.reddit.com/subreddits/search.json";
+var redditMain = "https://www.reddit.com";
 // initialies reddit thread count to zero
 var rddt = 0;
 //initializes reddit thumbnail count to zero
 var tbns = 0;
-// defines maximum thumb number of thumbnails to retun
+// defines maximum number of thumbnails to retun
 var maxtbns = 7;
 // defines maximum number of threads to return
 var maxrddts = 7;
-var startToUnix = moment(startingDate, "M-D-YYYY H:mm").valueOf();
-var endToUnix = moment(endingDate, "M-D-YYYY H:mm").valueOf();
-console.log(startToUnix);
-console.log(startToUnix);
+//conversion from start date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
+//var startToUnix = moment(startingDate, "M-D-YYYY H:mm").valueOf();
+//console.log(startToUnix);
+//conversion from end date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
+// var endToUnix = moment(endingDate, "M-D-YYYY H:mm").valueOf();
+// console.log(endToUnix);
 
 //if startingDate !=== "" && endingDate !=== "") {
 
-// makes call and gets json 
+// url for bitcoin subreddit filtered by user specified times
+//var bitcoinSubDateFiltered = "http://www.reddit.com/r/" + subreddit + "/search?sort=top&q=timestamp:" + startToUnix + ".." + endToUnix + "&syntax=cloudsearch&restrict_sr=on";
+// makes call and gets json
 $.getJSON(
+  //default url that returns top posts for the week based on the current date
 "http://www.reddit.com/r/" + subreddit + ".json?sort=top&t=week&limit=40&jsonp=?",
-function build(data)
+
+function defaultBuild(data)
 {
   $.each(
     data.data.children,
@@ -51,6 +60,28 @@ function build(data)
   )
 }
 )
-.success(function() { console.log("second success"); })
-.error(function() { console.log("error"); })
-.complete(function() { console.log("complete"); });
+
+$.ajax(
+    url,
+    {
+        data: { q: searchTerm },
+        success: function(responseData) {
+          var subredditOption = '';
+          var links = '';
+          var combo = '';
+            if (responseData.data.children.length > 0) {
+                console.log('# of results: ' + responseData.data.children.length);
+                $.each(responseData.data.children, function(idx, searchResult) {
+                    subredditOption += (searchResult.data.title + '<br>');
+                    links += (redditMain + searchResult.data.url + '<br>');
+                    combo += ("<a href="+   "'" + redditMain + searchResult.data.url+ "'>" + searchResult.data.title + "</a>" + '<br>');
+                    //<a href="http://www.yahoo.com">here</a>
+                });
+            } 
+     
+        //$("#reddit .titles").append(subredditOption);
+        //$("#reddit .urls").append(links);
+        $("#reddit .combined").append(combo);
+    }
+  }
+);
