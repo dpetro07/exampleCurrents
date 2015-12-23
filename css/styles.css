@@ -9,6 +9,14 @@
 
 }
 
+.priceConverter {
+  margin-left: 1%;
+}
+
+.bitPrice, .dateRange {
+  margin-top: 23%;
+}
+
 .btn-primary {
   background-color: #0A5480;
 }
@@ -47,4 +55,6 @@ input[type="text"] {
  body {
   background-color: #367CA6;
  }
+
+ 
 
