@@ -1,15 +1,6 @@
-var startingDate;
-var endingDate;
-var startingDatePrefix = "start=";
-var endingDatePrefix = "&end=";
-var histCur;
-var histObject;
-//setting up some global variables that will need to be used by several functions
-
-//dateChanger checks that both date fields are filled using the formValidator() functio. if so, we call the getHistData function, also sets the global variables 
-//startingDate and endingDate
-
 function dateChanger() {
+    var startingDatePrefix = "start=";
+    var endingDatePrefix = "&end=";
     if (formValidator() === true) {
         var ajaxStart = startingDatePrefix + startingDate;
         var ajaxEnd = endingDatePrefix + endingDate;
@@ -56,100 +47,100 @@ function getHistData(cur, start, end) {
 
 //function that makes sure user is choossing an end date that is greater than their start date
 function scopeChecker() {
-        var startVal = $("#startingDate").val();
-        var endVal = $("#endingDate").val();
+    var startVal = $("#startingDate").val();
+    var endVal = $("#endingDate").val();
 
-        var startArr = startVal.split('-');
-        var startYr = startArr[0];
-        var startMo = startArr[1];
-        var startDa = startArr[2];
+    var startArr = startVal.split('-');
+    var startYr = startArr[0];
+    var startMo = startArr[1];
+    var startDa = startArr[2];
 
-        var endArr = endVal.split('-');
-        var endYr = endArr[0];
-        var endMo = endArr[1];
-        var endDa = endArr[2];
+    var endArr = endVal.split('-');
+    var endYr = endArr[0];
+    var endMo = endArr[1];
+    var endDa = endArr[2];
 
-        if (startYr > endYr) {
-            alert("Choose an end date that is greater than your start date.");
-            $("#startingDate").val("");
-            $("#endingDate").val("");
-        } else if (startMo > endMo) {
-            alert("Choose an end date that is greater than your start date.");
-            $("#startingDate").val("");
-            $("#endingDate").val("");
-        } else if (startDa > endDa) {
-            alert("Choose an end date that is greater than your start date.");
-            $("#startingDate").val("");
-            $("#endingDate").val("");
-        } else {
-            dateChanger();
-        }
+    if (startYr > endYr) {
+        alert("Choose an end date that is greater than your start date.");
+        $("#startingDate").val("");
+        $("#endingDate").val("");
+    } else if (startMo > endMo) {
+        alert("Choose an end date that is greater than your start date.");
+        $("#startingDate").val("");
+        $("#endingDate").val("");
+    } else if (startDa > endDa) {
+        alert("Choose an end date that is greater than your start date.");
+        $("#startingDate").val("");
+        $("#endingDate").val("");
+    } else {
+        dateChanger();
     }
+}
 
 //sets value of histCur when page loads, also finds todays date.
 $(document).ready(function() {
     histCur = $("#historicalCurrency").text();
-  
-//calls dateChanger when the datepicker is changed
-     function getYesterdaysDate() {
-  var date = new Date();
-  date.setDate(date.getDate()-1);
-  return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
-  }
 
-  function getTodaysDate() {
-  var date = new Date();
-  return date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
-  }
+    //calls dateChanger when the datepicker is changed
+    function getYesterdaysDate() {
+        var date = new Date();
+        date.setDate(date.getDate() - 1);
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
 
-//creating variables for todays date and yesterdays date to help scope the datepickers
-  var todaysDate = getTodaysDate();
+    function getTodaysDate() {
+        var date = new Date();
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
 
-  var yesterdaysDate = getYesterdaysDate();
+    //creating variables for todays date and yesterdays date to help scope the datepickers
+    var todaysDate = getTodaysDate();
 
-//sets creates a datepicker from the #startingDate input field
-//some functions of datepicker didnt work as intended, onSet for example, so this function fixes those inconsistencies
-  $('#startingDate').click(function () {
-    var oldInput = $(this); //save this for using in the onSet event
-    var newInput = $(this).clone(true); //clone old input to prevent weird changes from datepicker.js
-    $(this).pickadate({
-    format: 'yyyy-mm-dd',
-    min: '2010-07-17',
-    max: yesterdaysDate,
-        onSet: function (event) { //occurs when something is selected
-            dateChanger();
-            if(event.highlight == undefined){  //is false when changing months         
-            $(oldInput).next().remove(); //hide picker
-            $(newInput).val($(oldInput).val()); //save value from weird generated input
-            $(oldInput).before(newInput); //place new normal input
-            $(oldInput).remove(); // remove weird input
+    var yesterdaysDate = getYesterdaysDate();
+
+    //sets creates a datepicker from the #startingDate input field
+    //some functions of datepicker didnt work as intended, onSet for example, so this function fixes those inconsistencies
+    $('#startingDate').click(function() {
+        var oldInput = $(this); //save this for using in the onSet event
+        var newInput = $(this).clone(true); //clone old input to prevent weird changes from datepicker.js
+        $(this).pickadate({
+            format: 'yyyy-mm-dd',
+            min: '2010-07-17',
+            max: yesterdaysDate,
+            onSet: function(event) { //occurs when something is selected
+                dateChanger();
+                if (event.highlight == undefined) { //is false when changing months         
+                    $(oldInput).next().remove(); //hide picker
+                    $(newInput).val($(oldInput).val()); //save value from weird generated input
+                    $(oldInput).before(newInput); //place new normal input
+                    $(oldInput).remove(); // remove weird input
+                }
             }
-        }
-    })
-});
+        })
+    });
 
-//sets creates a datepicker from the #endingDate input field
-//some functions of datepicker didnt work as intended, onSet for example, so this function fixes those inconsistencies
-  $('#endingDate').click(function () {
-    var oldInput = $(this); //save this for using in the onSet event
-    var newInput = $(this).clone(true); //clone old input to prevent weird changes from datepicker.js
-    $(this).pickadate({
-    format: 'yyyy-mm-dd',
-    min: '2010-07-17',
-    max: yesterdaysDate,
-        onSet: function (event) { //occurs when something is selected
-            scopeChecker()
-            if(event.highlight == undefined){  //is false when changing months         
-            $(oldInput).next().remove(); //hide picker
-            $(newInput).val($(oldInput).val()); //save value from weird generated input
-            $(oldInput).before(newInput); //place new normal input
-            $(oldInput).remove(); // remove weird input
+    //sets creates a datepicker from the #endingDate input field
+    //some functions of datepicker didnt work as intended, onSet for example, so this function fixes those inconsistencies
+    $('#endingDate').click(function() {
+        var oldInput = $(this); //save this for using in the onSet event
+        var newInput = $(this).clone(true); //clone old input to prevent weird changes from datepicker.js
+        $(this).pickadate({
+            format: 'yyyy-mm-dd',
+            min: '2010-07-17',
+            max: yesterdaysDate,
+            onSet: function(event) { //occurs when something is selected
+                scopeChecker()
+                if (event.highlight == undefined) { //is false when changing months         
+                    $(oldInput).next().remove(); //hide picker
+                    $(newInput).val($(oldInput).val()); //save value from weird generated input
+                    $(oldInput).before(newInput); //place new normal input
+                    $(oldInput).remove(); // remove weird input
+                }
             }
-        }
-    })
-});
+        })
+    });
 
-//calls dateChanger when the the histCur is changed
+    //calls dateChanger when the the histCur is changed
     $("#USDCur").click(function(event) {
         event.preventDefault();
         $("#historicalCurrency").text("USD");

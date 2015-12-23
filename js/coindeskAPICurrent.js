@@ -1,7 +1,3 @@
-    var USDPrice;
-    var GBPPrice;
-    var EURPrice;
-
     $(document).ready(function() {
         //global vars for the current prices of bitcoin in different currencies
 
