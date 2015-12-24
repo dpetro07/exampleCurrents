@@ -1,12 +1,19 @@
 function dateChanger() {
     var startingDatePrefix = "start=";
     var endingDatePrefix = "&end=";
-    if (formValidator() === true) {
+    if (formValidator() === true || initialLoad === true) {
         var ajaxStart = startingDatePrefix + startingDate;
         var ajaxEnd = endingDatePrefix + endingDate;
         getHistData(histCur, ajaxStart, ajaxEnd);
+        initalLoad = false;
     }
 }
+
+    yesterdaysDate = getYesterdaysDate()
+    endingDate = getTodaysDate();
+    startingDate = getLastWeeksDate();
+
+    dateChanger();
 
 //checks to see that both forms are filled before taking any action. 
 function formValidator() {
@@ -22,6 +29,24 @@ function formValidator() {
 
 }
 
+    function getYesterdaysDate() {
+        var date = new Date();
+        date.setDate(date.getDate() - 1);
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+
+    function getLastWeeksDate() {
+        var date = new Date();
+
+        date.setDate(date.getDate() - 7);
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+
+    function getTodaysDate() {
+        var date = new Date();
+        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+    }
+
 //we grab the currency selected, the start, and end dates and send them to the ajax request to return the historical data
 function getHistData(cur, start, end) {
 
@@ -36,6 +61,20 @@ function getHistData(cur, start, end) {
         },
         success: function(data) {
             histObject = data.bpi;
+            histDates = Object.keys(histObject);
+            histValues = [];
+            for (var i = 0; i < histDates.length; i++) {
+            var val = histObject[histDates[i]];
+            histValues.push(val);
+                }
+            for (var i = 0; i < histValues.length; i++) {
+            chartRows.push([histDates[i], histValues[i]]);
+            };
+            if (initalLoad === false) {
+                drawChart();
+            }
+            console.log(histDates);
+            console.log(histValues);
             console.log(histObject);
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -80,23 +119,9 @@ function scopeChecker() {
 //sets value of histCur when page loads, also finds todays date.
 $(document).ready(function() {
     histCur = $("#historicalCurrency").text();
-
-    //calls dateChanger when the datepicker is changed
-    function getYesterdaysDate() {
-        var date = new Date();
-        date.setDate(date.getDate() - 1);
-        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-    }
-
-    function getTodaysDate() {
-        var date = new Date();
-        return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
-    }
-
-    //creating variables for todays date and yesterdays date to help scope the datepickers
-    var todaysDate = getTodaysDate();
-
-    var yesterdaysDate = getYesterdaysDate();
+    
+    //setting values for yesterdays date, and the initial ending and starting date to be one week apart to show
+    //the initial graph data
 
     //sets creates a datepicker from the #startingDate input field
     //some functions of datepicker didnt work as intended, onSet for example, so this function fixes those inconsistencies

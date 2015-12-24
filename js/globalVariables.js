@@ -12,3 +12,8 @@
 
     //the object returned from the historical data ajax call. It will be in {date: price} format
     var histObject;
+
+    var initialLoad = true;
+    var histDates;
+    var histValues;
+    var chartRows = [];
