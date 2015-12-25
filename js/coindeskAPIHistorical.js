@@ -100,15 +100,15 @@ function scopeChecker() {
     var endDa = endArr[2];
 
     if (startYr > endYr) {
-        alert("Choose an end date that is greater than your start date.");
+        bootbox.alert("Choose an end date that is greater than your start date.");
         $("#startingDate").val("");
         $("#endingDate").val("");
     } else if (startMo > endMo) {
-        alert("Choose an end date that is greater than your start date.");
+        bootbox.alert("Choose an end date that is greater than your start date.");
         $("#startingDate").val("");
         $("#endingDate").val("");
     } else if (startDa > endDa) {
-        alert("Choose an end date that is greater than your start date.");
+        bootbox.alert("Choose an end date that is greater than your start date.");
         $("#startingDate").val("");
         $("#endingDate").val("");
     } else {

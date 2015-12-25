@@ -27,8 +27,8 @@
             //this function will write the current cost of bitcoin to the DOM
             function displayCurrentPrices() {
                 $("#currentPriceUSD").css('font-weight', 'bold').html(USDPrice);
-                $(".currentPriceGBP").css('font-weight', 'bold').html(GBPPrice);
-                $(".currentPriceEUR").css('font-weight', 'bold').html(EURPrice);
+                $("#currentPriceGBP").css('font-weight', 'bold').html(GBPPrice);
+                $("#currentPriceEUR").css('font-weight', 'bold').html(EURPrice);
             }
 
             //this function will return the current price and symbol of that currency.
@@ -58,7 +58,7 @@
                 }, 200);
                 setInterval(function() {
                     changeSinceYesterday(yesterdaysUSD, "USD", USDPrice, "#USDPriceDiff")
-                }, 15000);
+                }, 30000);
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Unable to retrieve yesterday's USD price data, some depencies failed to load.");
@@ -80,7 +80,7 @@
                 }, 200);
                 setInterval(function() {
                     changeSinceYesterday(yesterdaysGBP, "GBP", GBPPrice, "#GBPPriceDiff")
-                }, 15000);
+                }, 30000);
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Unable to retrieve yesterday's GBP price data, some depencies failed to load.");
@@ -102,7 +102,7 @@
                 }, 200);
                 setInterval(function() {
                     changeSinceYesterday(yesterdaysEUR, "EUR", EURPrice, "#EURPriceDiff")
-                }, 15000);
+                }, 30000);
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("Unable to retrieve yesterday's EUR price data, some depencies failed to load.");
