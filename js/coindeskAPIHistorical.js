@@ -60,6 +60,7 @@ function getHistData(cur, start, end) {
             currency: histCur
         },
         success: function(data) {
+            chartRows = [];
             histObject = data.bpi;
             histDates = Object.keys(histObject);
             histValues = [];
