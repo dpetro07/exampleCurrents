@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BitCurrents - Real-Time and Historical BitCoin Analytics</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/default.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/default.date.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="container">
+
+
+        <div class="row-fluid header">
+            <div class="col-md-3">
+                <div class="bitPrice">
+                    <h3>
+              Current Price
+              </h3>
+                    <h4>
+                <span id="currentPriceUSD">
+                  
+                </span>
+                <span id="USDPriceDiff">
+                    
+                </span>
+              </h4>
+                    <h4>
+                <span class="currentPriceGBP">
+                  
+                </span>
+                <span id="GBPPriceDiff">
+                    
+                </span>
+              </h4>
+                    <h4>
+                <span class="currentPriceEUR">
+                  
+                </span>
+                <span id="EURPriceDiff">
+                    
+                </span>
+              </h4>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-9 priceCharts">
+                        <h3>PriceCharts Go Here</h3>
+                        <div class="chartContainer">
+
+                        </div>
+                    </div>
+                    <div class="col-md-3 historicalDataSection">
+                        <h4>Historical Data</h4>
+                        <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
+                        <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
+                        <div class="btn-group">
+                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="historicalCurrency">USD</span><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="USDCur"><a>USD</a></li>
+                                <li><a id="GBPCur">GBP</a></li>
+                                <li><a id="EURCur">EUR</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row currencyConvert">
+                <div class="col-md-6">
+                    <div class="priceConverter">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label class="sr-only" for="bitCoinStarting">Bitcoin</label>
+                                <input type="text" class="form-control decimal" id="bitCoinStarting" value="">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="realCurrency">Real Currency</label>
+                                <span>BitCoin=</span>
+                                <input type="text" class="form-control decimal" id="realCurrency" value="">
+                            </div>
+                            <div class="btn-group">
+                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="selectedCurrency">USD</span><span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li id="USDConvert"><a>USD</a></li>
+                                    <li><a id="GBPConvert">GBP</a></li>
+                                    <li><a id="EURConvert">EUR</a></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mainContent">
+            <div class="row">
+                <div class="col-md-8 news">
+                    <h4>News Goes Here</h4>
+                </div>
+                <div class="col-md-4 tweets">
+                    <h4>Tweets Go Here</h4>
+                    <a class="twitter-timeline" href="https://twitter.com/danpetro7/lists/bitcurrents" data-widget-id="681605199694278656">Tweets from https://twitter.com/danpetro7/lists/bitcurrents</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript" src="js/globalVariables.js"></script>
+    <script type="text/javascript" src="js/picker.js"></script>
+    <script type="text/javascript" src="js/picker.date.js"></script>
+    <script type="text/javascript" src="js/legacy.js"></script>
+    <script type="text/javascript" src="js/coindeskAPICurrent.js"></script>
+    <script type="text/javascript" src="js/coindeskCurrencyConverter.js"></script>
+    <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+</body>
+
+</html>
