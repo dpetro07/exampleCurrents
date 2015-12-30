@@ -2,12 +2,18 @@
   font-family: Roboto;
 }
 
-.priceConverter, .bitPrice, .historicalDataSection {
-
-
-  text-align: left;
-
+.priceConverter, .bitPrice{
+  margin-top: 54px;
 }
+.priceConverter, .dateRange, .bitPrice {
+  width: 100%;
+  text-align: center;
+}
+
+.dateRange {
+  text-align: center;
+}
+
 
 .btn-primary {
   background-color: #0A5480;
@@ -22,19 +28,8 @@ input[type="text"] {
   background-color:#FFD971;
 } 
 
-.date-pick {
-  width: 150px;
-}
 
-
-.header {
-
-}
-
-.decimal {
-  width: 150px;
-}
- .header, .jumbotron {
+.jumbotron {
   background-color: #F7941A;
   padding-bottom: 5px;
   padding-top: 3px;
@@ -48,3 +43,64 @@ input[type="text"] {
   background-color: #367CA6;
  }
 
+ 
+/*navbar styling */
+.navbar-default {
+  background-color: #0a4060;
+  border-color: #042c43;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #096195;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #096195;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #096195;
+  background-color: #042c43;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #096195;
+  background-color: #042c43;
+}
+.navbar-default .navbar-toggle {
+  border-color: #042c43;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #042c43;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #096195;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #096195;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #096195;
+    background-color: #042c43;
+  }
+}
