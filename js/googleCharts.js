@@ -15,6 +15,10 @@ function drawChart() {
 
 $(document).ready(function() {
 
+  window.onresize = function() {
+    drawChart();
+}
+
   google.charts.load('current', {
     packages: ['corechart']
   });

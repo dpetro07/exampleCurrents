@@ -1,3 +1,8 @@
+window.onresize = function() {
+    drawChart();
+}
+
+
 function dateChanger() {
   var startingDatePrefix = "start=";
   var endingDatePrefix = "&end=";
