@@ -12,13 +12,18 @@ var tbns = 0;
 var maxtbns = 7;
 // defines maximum number of threads to return
 var maxrddts = 7;
+console.log(startingDate);
+console.log(endingDate);
 //conversion from start date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
-//var startToUnix = moment(startingDate, "M-D-YYYY H:mm").valueOf();
-//console.log(startToUnix);
+var startToUnix = moment(startingDate, "YYYY-MM-DD").valueOf();
+console.log(startToUnix);
+var realUnixStart = startToUnix/1000;
+console.log(realUnixStart);
 //conversion from end date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
-// var endToUnix = moment(endingDate, "M-D-YYYY H:mm").valueOf();
-// console.log(endToUnix);
-
+var endToUnix = moment(endingDate, "YYYY-MM-DD").valueOf();
+console.log(endToUnix);
+var realUnixEnd = endToUnix/1000;
+console.log(realUnixEnd);
 //if startingDate !=== "" && endingDate !=== "") {
 
 // url for bitcoin subreddit filtered by user specified times
@@ -69,12 +74,14 @@ $.ajax(
           var subredditOption = '';
           var links = '';
           var combo = '';
+          var allSubredditComments = '';
             if (responseData.data.children.length > 0) {
                 console.log('# of results: ' + responseData.data.children.length);
                 $.each(responseData.data.children, function(idx, searchResult) {
                     subredditOption += (searchResult.data.title + '<br>');
                     links += (redditMain + searchResult.data.url + '<br>');
                     combo += ("<a href="+   "'" + redditMain + searchResult.data.url+ "'>" + searchResult.data.title + "</a>" + '<br>');
+                    allSubredditComments += ("<a href="+   "'" + redditMain + searchResult.data.url+ "'>" + searchResult.data.title + "</a>" + '<br>');
                     //<a href="http://www.yahoo.com">here</a>
                 });
             } 
@@ -82,6 +89,10 @@ $.ajax(
         //$("#reddit .titles").append(subredditOption);
         //$("#reddit .urls").append(links);
         $("#reddit .combined").append(combo);
+        $("#reddit .text").append(allSubredditComments);
     }
   }
 );
+
+
+
