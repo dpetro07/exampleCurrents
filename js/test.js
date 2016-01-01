@@ -12,18 +12,18 @@ var tbns = 0;
 var maxtbns = 7;
 // defines maximum number of threads to return
 var maxrddts = 7;
-console.log(startingDate);
-console.log(endingDate);
+// console.log(startingDate);
+// console.log(endingDate);
 //conversion from start date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
-var startToUnix = moment(startingDate, "YYYY-MM-DD").valueOf();
-console.log(startToUnix);
-var realUnixStart = startToUnix/1000;
-console.log(realUnixStart);
+// var startToUnix = moment(startingDate, "YYYY-MM-DD").valueOf();
+// console.log(startToUnix);
+// var realUnixStart = startToUnix/1000;
+// console.log(realUnixStart);
 //conversion from end date format to unix time stamp (seconds since January 1st 1970). this is required to filter by dates via the reddit api
-var endToUnix = moment(endingDate, "YYYY-MM-DD").valueOf();
-console.log(endToUnix);
-var realUnixEnd = endToUnix/1000;
-console.log(realUnixEnd);
+// var endToUnix = moment(endingDate, "YYYY-MM-DD").valueOf();
+// console.log(endToUnix);
+// var realUnixEnd = endToUnix/1000;
+// console.log(realUnixEnd);
 //if startingDate !=== "" && endingDate !=== "") {
 
 // url for bitcoin subreddit filtered by user specified times
@@ -51,7 +51,7 @@ function defaultBuild(data)
           rddt++;
           // each iteration contructs a new item which is a thread post with title & updown/votes & number of comments
           item = '<li><p><strong><a href="' + post.data.url + '" target="_blank">' + post.data.title + '</strong></a></p>';
-          item += '<p>' + post.data.ups + '&uarr; ' + post.data.downs + '&darr; | <a href="//reddit.com' + post.data.permalink + '" target="_blank">' + post.data.num_comments + ' Comments</a></p></li>';
+          item += '<p>' + post.data.ups + '&uarr; ' + post.data.downs + '&darr; | <a href="https://reddit.com' + post.data.permalink + '" target="_blank">' + post.data.num_comments + ' Comments</a></p></li>';
       }
       // if (x=$.inArray(post.data.url.split('.').pop(), img)>0) {
       //   console.log(x + ' : ' + post.data.url);
