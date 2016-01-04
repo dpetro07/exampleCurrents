@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top box-shadow--8dp">
   <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand"><img src="images/logo.png" width="140" id="logo"></a>
@@ -22,13 +23,15 @@
   </div>
 </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
+<div class="jumbotron box-shadow--4dp">
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="col-md-2 col-sm-3">
         <div class="bitPrice">
           <h4>
-            Current Price
+            <strong>
+              Current Price
+            </strong>
           </h4>
           <h4>
             <span id="currentPriceUSD">
@@ -58,14 +61,16 @@
       </div>
       <div class="col-md-7 col-sm-9">
         <div class="priceCharts">
-          <h3>Historical Pricing</h3>
-          <div id="myLineChart"></div>
+          <h3><strong>Historical Pricing</strong></h3>
+          <div class="box-shadow--4dp" id="myLineChart"></div>
         </div>
         <div class="dateRange">
-          <h4>Date Range</h4>
-          <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
-          <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
-          <div class="btn-group">
+          <h4><strong>Date Range</strong></h4>
+          <form class="box-shadow--3dp">
+            <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
+            <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
+          </form>
+          <div class="btn-group box-shadow--3dp">
             <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="historicalCurrency">USD</span><span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li id="USDCur"><a>USD</a></li>
@@ -78,10 +83,12 @@
       </div>
       <div class="col-md-3 col-sm-9 col-sm-offset-3 col-md-offset-0">
         <div class="priceConverter">
-          <h4>Currency Converter</h4>
-          <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
-          <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
-          <div class="btn-group">
+          <h4><strong>Currency Converter</strong></h4>
+          <form class="box-shadow--3dp">
+            <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
+            <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
+          </form>
+          <div class="btn-group box-shadow--3dp">
             <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span id="selectedCurrency">USD</span><span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li id="USDConvert"><a>USD</a></li>
@@ -100,38 +107,50 @@
 
   <div class="row">
     <div class="col-md-8 news">
-      
-      
-  <div class="panel panel-default">
-<div class="panel-heading"><h4 class="newsTitle">Current Reddit News</h4></div>
-  <div class="panel-body">
-   <section id="reddit" class='reddit single'>
-  <header>
-  
-  </header>
-  <section class="sub">
-  <section class="thumbs">
-  </section>
-  <ul class="posts">
-  </ul>
-  <section class="titles">
-  <ul class="urls">
-  </ul>
-  </section>
-  <section class="combined">
-</section>
-    
-  </div>
-</div>
+
+
+      <div class="panel panel-default box-shadow--6dp">
+        <div class="panel-heading box-shadow--4dp">
+          <h4 class="newsTitle">Current Reddit News</h4></div>
+        <div class="panel-body">
+          <section id="reddit" class='reddit single'>
+            <header>
+
+            </header>
+            <section class="sub">
+              <section class="thumbs">
+              </section>
+              <ul class="posts">
+              </ul>
+              <section class="titles">
+                <ul class="urls">
+                </ul>
+              </section>
+              <section class="combined">
+              </section>
+
+        </div>
+      </div>
     </div>
     <div class="col-md-4 tweets">
-        <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
+      <script>
+      ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + "://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, "script", "twitter-wjs");
+      </script>
     </div>
   </div>
 </div>
 
-<footer>
+<footer class="box-shadow--6dp">
   <p>&copy; 2016 BitCurrents Powered by CoinDesk</p>
 </footer>
 </div>

@@ -117,13 +117,13 @@ $(document).ready(function() {
     var percent;
     if (diff < 0) {
       percent = ((diff * -1) / current[1]).toFixed(4);
-      $(id).css('color', 'red');
+      $(id).css('color', '#B71C1C');
       $(id).html(diff);
       $(id).append(' <i class="fa fa-chevron-down"></i>');
       $(id).append(" <sub>" + percent + "%</sub>");
     } else {
       percent = (diff / current[1]).toFixed(4);
-      $(id).css('color', 'green');
+      $(id).css('color', '#1B5E20');
       $(id).html("+" + diff);
       $(id).append(' <i class="fa fa-chevron-up"></i>');
       $(id).append(" <sup>" + percent + "%</sup>");
