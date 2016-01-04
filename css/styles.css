@@ -32,10 +32,11 @@ input[type="text"] {
 .jumbotron {
   background-color: #F7941A;
   padding-bottom: 5px;
-  padding-top: 3px;
+  padding-top: 5px;
+  margin-top: 50px;
  }
 
- .mainContent {
+ .mainContent * {
   color: white;
  }
 

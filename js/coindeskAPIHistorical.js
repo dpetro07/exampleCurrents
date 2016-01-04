@@ -1,8 +1,3 @@
-window.onresize = function() {
-    drawChart();
-}
-
-
 function dateChanger() {
   var startingDatePrefix = "start=";
   var endingDatePrefix = "&end=";
@@ -10,7 +5,7 @@ function dateChanger() {
     var ajaxStart = startingDatePrefix + startingDate;
     var ajaxEnd = endingDatePrefix + endingDate;
     getHistData(histCur, ajaxStart, ajaxEnd);
-    initalLoad = false;
+
   }
 }
 
@@ -35,9 +30,19 @@ function formValidator() {
 }
 
 function getYesterdaysDate() {
+  var day;
+  var month;
   var date = new Date();
   date.setDate(date.getDate() - 1);
-  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  month = (date.getMonth() + 1);
+  day = date.getDate();
+  if (month < 10) {
+    month = "0" + month;
+  }
+  if (day < 10) {
+    day = "0" + day;
+  }
+  return date.getFullYear() + '-' + month + '-' + day;
 }
 
 function getLastWeeksDate() {
@@ -48,8 +53,18 @@ function getLastWeeksDate() {
 }
 
 function getTodaysDate() {
+  var day;
+  var month;
   var date = new Date();
-  return date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+  month = (date.getMonth() + 1);
+  day = date.getDate();
+  if (month < 10) {
+    month = "0" + month;
+  }
+  if (day < 10) {
+    day = "0" + day;
+  }
+  return date.getFullYear() + '-' + month + '-' + day;
 }
 
 //we grab the currency selected, the start, and end dates and send them to the ajax request to return the historical data
@@ -76,7 +91,7 @@ function getHistData(cur, start, end) {
       for (var i = 0; i < histValues.length; i++) {
         chartRows.push([histDates[i], histValues[i]]);
       };
-      if (initalLoad === false) {
+      if (initialLoad === false) {
         drawChart();
       }
       console.log(histDates);
