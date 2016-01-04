@@ -62,6 +62,18 @@ input[type="text"] {
   color: white;
  }
 
+ .panel {
+  background-color: #195274;
+ }
+
+ .panel-default > .panel-heading {
+  background-color: #0a4060;
+ }
+
+ .newsTitle {
+  text-align: center;
+ }
+
  body {
   background-color: #367CA6;
   margin: 0 0 50px; /* bottom = footer height */

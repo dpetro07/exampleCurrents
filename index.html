@@ -27,9 +27,9 @@
     <div class="row-fluid">
       <div class="col-md-2 col-sm-3">
         <div class="bitPrice">
-          <h3>
+          <h4>
             Current Price
-          </h3>
+          </h4>
           <h4>
             <span id="currentPriceUSD">
                   
@@ -78,7 +78,7 @@
       </div>
       <div class="col-md-3 col-sm-9 col-sm-offset-3 col-md-offset-0">
         <div class="priceConverter">
-          <h3>Currency Converter</h3>
+          <h4>Currency Converter</h4>
           <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
           <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
           <div class="btn-group">
@@ -100,41 +100,51 @@
 
   <div class="row">
     <div class="col-md-8 news">
-      <h4>Reddit News</h4>
-       <section id="reddit" class='reddit single'>
-  <header>
-  
-  </header>
-  <section class="sub">
-  <section class="thumbs">
-  </section>
-  <ul class="posts">
-  </ul>
-  <section class="titles">
-  <ul class="urls">
-  </ul>
-  </section>
-  <section class="combined">
-</section>
-       <div id="masthead">
-      <H3> NYTimes Top Stories</H3>
-    </div>
-     <div id="output">
 
-      <div class="row header">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="newsTitle">Current Reddit News</h4></div>
+        <div class="panel-body">
+          <section id="reddit" class='reddit single'>
+            <header>
+
+            </header>
+            <section class="sub">
+              <section class="thumbs">
+              </section>
+              <ul class="posts">
+              </ul>
+              <section class="titles">
+                <ul class="urls">
+                </ul>
+              </section>
+              <section class="combined">
+              </section>
+
+        </div>
       </div>
     </div>
-    </div>
     <div class="col-md-4 tweets">
-      <h4>Tweets</h4>
-        <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
+      <script>
+      ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + "://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, "script", "twitter-wjs");
+      </script>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>&copy; 2016 BitCurrents</p>
+  <p>&copy; 2016 BitCurrents Powered by CoinDesk</p>
 </footer>
 </div>
 <!-- /container -->
@@ -153,7 +163,6 @@
   <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
   <script type="text/javascript" src="js/googleCharts.js"></script>
   <script type="text/javascript" src='js/reddit.js'></script>
-  <script type="text/javascript" src="js/nytimes.js"></script>
   <script type="text/javascript" src="js/bootbox.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
