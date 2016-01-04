@@ -44,7 +44,8 @@
 // });
 
 $.ajax({
-  url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956',
+  //url:'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&begin_date='+ startingDate+'&end_date=2'+endingDate+'&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956'
+  //url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&begin_date=20100101&end_date=20140101&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956',
   dataType: 'json',
   success: function(resp){
     console.log(resp.response.docs.length)
@@ -52,7 +53,7 @@ $.ajax({
       $("#output").append('<div class="row movie">');
       $("#output").append('<div class="col-md-3 title"><img src="http://www.nytimes.com/' + resp.response.docs[i].multimedia[0].url +'">' + '</div>');
       $("#output").append('<div class="col-md-3 title">' + resp.response.docs[i].headline.main + '</div>');
-      $("#output").append('<div class="col-md-6 teaser">'  + resp.response.docs[i].lead_paragraph  + ' <a href="' + resp.response.docs[i].lead_paragraph + '"> Read More </a>');
+      $("#output").append('<div class="col-md-6 teaser">'  + resp.response.docs[i].lead_paragraph  + ' <a href="' + resp.response.docs[i].web_url + '"> More </a>');
       $("#output").append('</div>');
       $("#output").append('</div>');
     }

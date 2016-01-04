@@ -42,14 +42,16 @@ function defaultBuild(data)
       var item = '';
       var tbn = '';
       // iterates through thumbnails as long as maximum limit is not reached
-      if (post.data.thumbnail && post.data.thumbnail != 'self' && tbns < maxtbns) {
+      //excludes 'self' default thumnail images (the generic reddit robot)
+      //if (post.data.thumbnail && post.data.thumbnail != 'self' && tbns < maxtbns) {
+        if (post.data.thumbnail && tbns < maxtbns && i>0) {
         tbns++;
         // each iteration contructs a new tbn(thumbnail) associated with thread
         tbn += '<a href="' + post.data.url + '" title="' + post.data.title + '" target="_blank"><img src="' + post.data.thumbnail + '"></a>';
         // iterates through items (thread posts in subreddit) as long as maximum limit is not reached
-      } else if (rddt<maxrddts) {
+      } else if (rddt<maxrddts && i>0) {
           rddt++;
-          // each iteration contructs a new item which is a thread post with title & updown/votes & number of comments
+          // each iteration contructs a new item which is a thread post with title, updown/votes, & number of comments
           item = '<li><p><strong><a href="' + post.data.url + '" target="_blank">' + post.data.title + '</strong></a></p>';
           item += '<p>' + post.data.ups + '&uarr; ' + post.data.downs + '&darr; | <a href="https://reddit.com' + post.data.permalink + '" target="_blank">' + post.data.num_comments + ' Comments</a></p></li>';
       }
