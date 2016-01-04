@@ -1,0 +1,62 @@
+body {
+  background-color: #FFFFFF;
+}
+
+
+/* Navbar */
+nav {
+  background-color: #263248;
+}
+
+.navbarL {
+  margin-bottom: 3px;
+}
+
+
+
+
+/*Bitcoin Current Prices Desktop*/
+.currentPricingLBox{
+  background-color: #FF9800;
+  border-style: solid;
+  border-color: black;
+  text-align: center;
+  margin-top:0; 
+  margin-bottom: 0;
+  margin-right: 0px;
+  margin-left: 0px;
+  font-size: 1em;
+}
+
+.currentPricingL{
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  text-align: center; 
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+
+h1 {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+/* Google Charts */
+
+#myLineChart {
+  border-style: solid;
+  border-color: black;
+}
+
+.title {
+  font-size: 12px;
+  margin-top: 0;
+  
+
+}
