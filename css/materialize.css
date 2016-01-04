@@ -1,0 +1,187 @@
+body {
+  background-color: #7E8AA2;
+}
+
+
+/* Navbar */
+nav {
+  background-color: #263248;
+}
+
+.navbarHead {
+  font-size: .9em;
+  font-family: 'Passion One', cursive;
+}
+
+.navbarL {
+  margin-bottom: 3px;
+}
+
+
+
+
+/*Bitcoin Current Prices*/
+
+.currencyName {
+    color: white;
+    border-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Passion One', cursive;
+}
+ 
+}
+
+.currentPricingLBox{
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #FFFFFF;
+  box-shadow: 4px 4px .5em #000000;
+  text-align: center;
+  margin-top:1em; 
+  margin-bottom: 0;
+  margin-right: 0px;
+  margin-left: 0px;
+  font-size: 1em;
+}
+
+.currentPricingL{
+  background-color: white;
+  border-style: solid;
+  border-color: #FF9800;
+  box-shadow: 4px 4px .5em #000000;
+  text-align: center; 
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5em;
+}
+
+
+h1 {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+
+/* Google Charts */
+.charts {
+  border-style: solid;
+  border-color: #FFFFFF;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px .5em #000000;
+}
+
+#myLineChart {
+  border-style: solid;
+  border-color: black;
+}
+
+.title {
+  font-size: 2em;
+  font-family: 'Passion One', cursive;
+  margin-top: 0;
+}
+
+
+/* Date Picker */
+.picker_wrap {
+  width: 50%;
+  height: 20%;
+}
+
+.picker__date-display {
+  background-color: #FF9800
+}
+
+.picker__weekday-display {
+  background-color: #263248;
+}
+
+.btn-flat {
+  color: #263248;
+}
+
+
+
+/* Currency Converter */
+.priceConverter {
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-color: #FFFFFF;
+  box-shadow: 4px 4px .5em #000000;
+}
+
+input[type="text"] {
+  background-color: #7E8AA2;
+  border-style: solid;
+  border-color: black;
+}
+
+
+
+
+/*Dropdown Buttons*/
+.btn, .btn-large {
+  background-color: #FF9800;
+}
+
+.dropdown-content, .dropdown-content li>a {
+  background-color: #FF9800;
+  color: #FFFFFF;
+}
+
+
+.dropdown-content:hover, .btn:hover {
+  background-color: #7E8AA2;
+}
+
+ input, {
+  color: #FFFFFF;
+}
+
+
+/*Reddit*/
+.news {
+  border-style: solid;
+  border-color: #FF9800;
+  background-color: #FFFFFF;
+}
+
+.newsTitle {
+  color: #000000;
+  font-family: 'Passion One', cursive;
+}
+
+.mainContent * {
+  color: #263248;
+}
+
+ul li {
+  border-style: solid;
+  border-color: #263248;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+
+/* Footer */
+.footer {
+  border-style: solid;
+  border-color: #FF9800;
+  background-color: #FFFFFF;
+  box-shadow: 3px 3px .5em #000000;
+  color: #000000;
+}
+
+.copyright {
+  text-align: right;
+}
+
+
