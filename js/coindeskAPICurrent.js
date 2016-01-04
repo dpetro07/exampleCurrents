@@ -123,7 +123,7 @@ $(document).ready(function() {
       $(id).append(" <sub>" + percent + "%</sub>");
     } else {
       percent = (diff / current[1]).toFixed(4);
-      $(id).css('color', 'black');
+      $(id).css('color', 'green');
       $(id).html("+" + diff);
       $(id).append(' <i class="fa fa-chevron-up"></i>');
       $(id).append(" <sup>" + percent + "%</sup>");
