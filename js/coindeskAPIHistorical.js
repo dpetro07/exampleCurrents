@@ -19,9 +19,7 @@ dateChanger();
 function formValidator() {
   if ($("#startingDate").val() !== "" && $("#endingDate").val() !== "") {
     startingDate = $("#startingDate").val();
-    console.log(startingDate);
     endingDate = $("#endingDate").val();
-    console.log(endingDate);
     return true;
   } else {
     return false
@@ -94,9 +92,6 @@ function getHistData(cur, start, end) {
       if (initialLoad === false) {
         drawChart();
       }
-      console.log(histDates);
-      console.log(histValues);
-      console.log(histObject);
     },
     error: function(jqXHR, textStatus, errorThrown) {
       console.log("Unable to retrieve data, some depencies could not be loaded.");
@@ -124,11 +119,11 @@ function scopeChecker() {
     bootbox.alert("Choose an end date that is greater than your start date.");
     $("#startingDate").val("");
     $("#endingDate").val("");
-  } else if (startMo > endMo) {
+  } else if (startMo > endMo && startYr === endYr) {
     bootbox.alert("Choose an end date that is greater than your start date.");
     $("#startingDate").val("");
     $("#endingDate").val("");
-  } else if (startDa > endDa) {
+  } else if (startDa > endDa && startMo === endMo) {
     bootbox.alert("Choose an end date that is greater than your start date.");
     $("#startingDate").val("");
     $("#endingDate").val("");
