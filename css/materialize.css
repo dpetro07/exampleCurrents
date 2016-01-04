@@ -1,5 +1,5 @@
 body {
-  background-color: #FFFFFF;
+  background-color: #263248;
 }
 
 
@@ -16,6 +16,10 @@ nav {
 
 
 /*Bitcoin Current Prices Desktop*/
+.pricingColor {
+  background-color: #FFFFFF;
+}
+
 .currentPricingLBox{
   background-color: #FF9800;
   border-style: solid;
@@ -57,6 +61,80 @@ h1 {
 .title {
   font-size: 12px;
   margin-top: 0;
-  
+}
 
+
+/* Date Picker */
+.picker_wrap {
+  width: 50%;
+  height: 20%;
+}
+
+.picker__date-display {
+  background-color: #FF9800
+}
+
+.picker__weekday-display {
+  background-color: #263248;
+}
+
+.btn-flat {
+  color: #263248;
+}
+
+
+
+/* Currency Converter */
+input[type="text"] {
+  background-color: #7E8AA2;
+  border-style: solid;
+  border-color: black;
+}
+
+.charts {
+  background-color: #263248;
+}
+
+
+
+/*Dropdown Buttons*/
+.btn, .btn-large {
+  background-color: #FF9800;
+}
+
+.dropdown-content, .dropdown-content li>a {
+  background-color: #FF9800;
+  color: #FFFFFF;
+}
+
+
+.dropdown-content:hover, .btn:hover {
+  background-color: #7E8AA2;
+}
+
+ input, {
+  color: #FFFFFF;
+}
+
+
+/*Twitter*/
+.customisable-border.thm-dark, .thm-dark .customisable-border {
+  border-color: #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+.thm-dark {
+    color: white;
+}
+
+
+/* Footer */
+.footer {
+  border-style: solid;
+  border-color: #FF9800;
+  background-color: #FFFFFF;
+}
+
+.copyright {
+  text-align: right;
 }

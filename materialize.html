@@ -27,19 +27,16 @@
   <div class="row navbarL">
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo center"><img src="images/logo.png" width="140"></a>
+        <a href="#" class="brand-logo left col offset-l1"><img src="images/logo.png" width="140"></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-          <li><a href="sass.html">Sass</a></li>
-          <li><a href="badges.html">Components</a></li>
-          <li><a href="collapsible.html">JavaScript</a></li>
         </ul>
       </div>
     </nav>
   </div>
 <!-- Current Bitcoin Prices -->    
-      <div class="container">
-        <div class="row">
-          <div class="col l4 currentPricingLBox" >
+
+        <div class="row pricingColor">
+          <div class="col l2 offset-l1 currentPricingLBox" >
             <h4 class="currentPricingL">
               <span id="currentPriceGBP"></span>
               <br>
@@ -47,7 +44,7 @@
               <h1> British Pound</h1>
             </h4>
           </div>
-          <div class="col l4 currentPricingLBox" >
+          <div class="col l2 offset-l2 currentPricingLBox" >
             <h4 class="currentPricingL">
               <span id="currentPriceUSD"></span>
               <br>
@@ -55,7 +52,7 @@
               <h1>US Dollar</h1>
             </h4>
           </div>
-          <div class="col l4 currentPricingLBox" >
+          <div class="col l2 offset-l2 currentPricingLBox" >
             <h4 class="currentPricingL">
               <span id="currentPriceEUR"></span>
               <br>
@@ -64,13 +61,13 @@
             </h4>
           </div>
         </div>
-      </div>
+
 
 
 <!--Google Charts-->
-<div class="container">
-  <div class="row">
-    <div class="col l10">
+
+  <div class="row charts">
+    <div class="col l8 offset-l1">
       <div class="priceCharts">
         <h3 class="title">Historical Pricing</h3>
         <div id="myLineChart"></div>
@@ -84,17 +81,22 @@
               <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
             </div>
 
+          <div class="row">
             <div class="col l6">
               <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
             </div>
+          </div>
 
-            <div class="btn-group">
-              <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                <span id="historicalCurrency">USD</span>
-                <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+
+
+
+            <div>
+              <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
+              <ul id='dropdown1' class='dropdown-content'>
                 <li id="USDCur"><a>USD</a></li>
+                <li class="divider"></li>
                 <li><a id="GBPCur">GBP</a></li>
+                <li class="divider"></li>
                 <li><a id="EURCur">EUR</a></li>
               </ul>
             </div>
@@ -110,18 +112,19 @@
         <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
         <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
         <div class="btn-group">
-        <a class='dropdown-button btn' href='#' data-activates='dropdown1'><span id="selectedCurrency">USD</span><span class="caret"></span></a>
-       
-          <ul id='dropdown1' class='dropdown-content'>
+        <a class='dropdown-button btn' href='#' data-activates='dropdown2'><span id="selectedCurrency">USD</span><span class="caret"></span></a>
+          <ul id='dropdown2' class='dropdown-content'>
             <li id="USDConvert"><a>USD</a></li>
+            <li class="divider"></li>
             <li><a id="GBPConvert">GBP</a></li>
+            <li class="divider"></li>
             <li><a id="EURConvert">EUR</a></li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 
 
   <div class="row mainContent">
@@ -138,7 +141,15 @@
 <hr>
 
 <footer>
-  <p>&copy; 2015 Company, Inc.</p>
+  <div class="row">
+    <div class="col l10 offset-l1 footer">
+      <img src="images/logo.png" width="140">
+        <h6>BitCurrents is dedicated to providing real-time and historical Bitcoin data through a variety of open-source applications. As students enrolled in the Rutgers Coding Bootcamp, BitCurrents was created as a group front-end project showcasing the web development tools we have learned so far. </h6>
+        <h7> Programming languages used: HTML, CSS, Javascript, jQuery, Ajax, Bootstrap, and MaterializeCSS.</h7>
+        <h7>API's used: Coindesk, Reddit, Google Charts, Twitter and Youtube widgets.</h7>
+          <p class="copyright">&copy; 2016 BitCurrents, Inc.</p>
+    </div>
+  </div>
 </footer>
 </div>
 <!-- /container -->
