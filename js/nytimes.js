@@ -45,18 +45,20 @@
 
 
 
-//var newStartingDateString = startingDate.replace(/-/g, "");
-//var newEndingDateString = endingDate.replace(/-/g, "");
+var newStartingDateString = startingDate.replace(/-/g, "");
+var newEndingDateString = endingDate.replace(/-/g, "");
 console.log(startingDate);
 console.log(endingDate);
-// console.log(newEndingDateString);
-// console.log(newStartingDateString);
+console.log(newEndingDateString);
+console.log(newStartingDateString);
 
 
 
 $.ajax({
-  //url:'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&begin_date='+ newStartingDateString +'&end_date='+ newEndingDateString +'&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956',
-  url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&begin_date=20100101&end_date=20150101&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956',
+  //URL that contains converted global varibale strings 
+  url:'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&begin_date='+ newStartingDateString +'&end_date='+ newEndingDateString +'&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956',
+  //URL for testing with default large date range
+  //url: 'http://api.nytimes.com/svc/search/v2/articlesearch.json?&q=bitcoin&begin_date=20100101&end_date=20150101&api-key=27a6b42078d85e9fd9743e17ce52db9c:4:73801956',
   dataType: 'json',
   success: function(resp){
     console.log(resp.response.docs.length)
