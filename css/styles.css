@@ -36,11 +36,6 @@ footer {
   text-align: center;
 }
 
-
-.btn-primary {
-  background-color: #0A5480;
-}
-
 .priceCharts {
   text-align: center;
 }
@@ -53,6 +48,7 @@ input[type="text"] {
 
 .btn {
   background-color: #01579B;
+  font-weight: bold;
 }
 
 .jumbotron {
