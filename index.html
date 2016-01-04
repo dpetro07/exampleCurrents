@@ -16,8 +16,9 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand"><img src="images/logo.png" width="140"></a>
+      <a class="navbar-brand"><img src="images/logo.png" width="140" id="logo"></a>
     </div>
+    <h6 id="navTitle">Real-Time and Historical Bitcoin Analytics</h6>
   </div>
 </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -99,20 +100,41 @@
 
   <div class="row">
     <div class="col-md-8 news">
-      <h4>News Goes Here</h4>
+      <h4>Reddit News</h4>
+       <section id="reddit" class='reddit single'>
+  <header>
+  
+  </header>
+  <section class="sub">
+  <section class="thumbs">
+  </section>
+  <ul class="posts">
+  </ul>
+  <section class="titles">
+  <ul class="urls">
+  </ul>
+  </section>
+  <section class="combined">
+</section>
+       <div id="masthead">
+      <H3> NYTimes Top Stories</H3>
+    </div>
+     <div id="output">
+
+      <div class="row header">
+      </div>
+    </div>
     </div>
     <div class="col-md-4 tweets">
-      <h4>Tweets Go Here</h4>
+      <h4>Tweets</h4>
         <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
   </div>
 </div>
 
-<hr>
-
 <footer>
-  <p>&copy; 2015 Company, Inc.</p>
+  <p>&copy; 2016 BitCurrents</p>
 </footer>
 </div>
 <!-- /container -->
@@ -130,6 +152,8 @@
   <script type="text/javascript" src="js/coindeskCurrencyConverter.js"></script>
   <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
   <script type="text/javascript" src="js/googleCharts.js"></script>
+  <script type="text/javascript" src='js/reddit.js'></script>
+  <script type="text/javascript" src="js/nytimes.js"></script>
   <script type="text/javascript" src="js/bootbox.min.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
