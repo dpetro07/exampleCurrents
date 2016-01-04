@@ -28,36 +28,33 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left col offset-l1"><img src="images/logo.png" width="140"></a>
+        <p class="col l9 offset-l4"> Real time Bitcoin News, Price Updates and Twitter feeds</p>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         </ul>
       </div>
     </nav>
   </div>
 <!-- Current Bitcoin Prices -->    
-
         <div class="row pricingColor">
-          <div class="col l2 offset-l1 currentPricingLBox" >
+          <div class="col l2 offset-l1 m4 s12" ><p class="currencyName">British Pound</p>
             <h4 class="currentPricingL">
               <span id="currentPriceGBP"></span>
               <br>
               <span id="GBPPriceDiff"></span>
-              <h1> British Pound</h1>
             </h4>
           </div>
-          <div class="col l2 offset-l2 currentPricingLBox" >
+          <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">US Dollar</p>
             <h4 class="currentPricingL">
               <span id="currentPriceUSD"></span>
               <br>
               <span id="USDPriceDiff"></span>
-              <h1>US Dollar</h1>
             </h4>
           </div>
-          <div class="col l2 offset-l2 currentPricingLBox" >
+          <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">Euro</p>
             <h4 class="currentPricingL">
               <span id="currentPriceEUR"></span>
               <br>
               <span id="EURPriceDiff"></span>
-              <h1>Euro</h1>
             </h4>
           </div>
         </div>
@@ -66,8 +63,8 @@
 
 <!--Google Charts-->
 
-  <div class="row charts">
-    <div class="col l8 offset-l1">
+  <div class="row ">
+    <div class="col l8 offset-l1 m7 s12 charts">
       <div class="priceCharts">
         <h3 class="title">Historical Pricing</h3>
         <div id="myLineChart"></div>
@@ -77,12 +74,12 @@
         <div class="row">
           <div class="dateRange">
             <h4>Date Range</h4>
-            <div class="col l6">
+            <div class="col l6 m6">
               <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
             </div>
 
           <div class="row">
-            <div class="col l6">
+            <div class="col l6 m6">
               <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
             </div>
           </div>
@@ -106,7 +103,7 @@
     </div>
 
 <!-- Currency Converter -->
-    <div class="col l2">
+    <div class="col l2 m5 s12">
       <div class="priceConverter">
         <h3 class="title">Currency Converter</h3>
         <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
@@ -131,7 +128,7 @@
     <div class="col l8 news">
 <!--INSERT NEWS API HERE -->
     </div>
-    <div class="col l4 offset-l8 tweets">
+    <div class="col l4 offset-l8  m5 offset-m7 s12 tweets">
         <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
@@ -168,6 +165,7 @@
   <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
   <script type="text/javascript" src="js/googleCharts.js"></script>
   <script type="text/javascript" src="js/bootbox.min.js"></script>
+  <script type="text/javascript" src="js/navbar.js"></script>
   <!-- Latest compiled and minified JavaScript -->
   <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
   

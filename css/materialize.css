@@ -1,5 +1,5 @@
 body {
-  background-color: #263248;
+  background-color: #7E8AA2;
 }
 
 
@@ -15,17 +15,26 @@ nav {
 
 
 
-/*Bitcoin Current Prices Desktop*/
-.pricingColor {
-  background-color: #FFFFFF;
+/*Bitcoin Current Prices*/
+
+.currencyName {
+    color: white;
+    border-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: center;
+}
+ 
 }
 
 .currentPricingLBox{
-  background-color: #FF9800;
+  background-color: #FFFFFF;
   border-style: solid;
-  border-color: black;
+  border-color: #FFFFFF;
+  box-shadow: 4px 4px .5em #000000;
   text-align: center;
-  margin-top:0; 
+  margin-top:1em; 
   margin-bottom: 0;
   margin-right: 0px;
   margin-left: 0px;
@@ -35,10 +44,12 @@ nav {
 .currentPricingL{
   background-color: white;
   border-style: solid;
-  border-color: black;
+  border-color: #FF9800;
+  box-shadow: 4px 4px .5em #000000;
   text-align: center; 
+  margin-top: 0;
   margin-bottom: 0;
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 
@@ -92,7 +103,10 @@ input[type="text"] {
 }
 
 .charts {
-  background-color: #263248;
+  border-style: solid;
+  border-color: #FF9800;
+  background-color: #FFFFFF;
+  box-shadow: 4px 4px .5em #000000;
 }
 
 
@@ -133,8 +147,12 @@ input[type="text"] {
   border-style: solid;
   border-color: #FF9800;
   background-color: #FFFFFF;
+  box-shadow: 3px 3px .5em #000000;
 }
 
 .copyright {
   text-align: right;
 }
+
+
+
