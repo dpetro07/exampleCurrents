@@ -1,4 +1,5 @@
 function drawChart() {
+  initialLoad = false;
   var data = new google.visualization.DataTable();
   data.addColumn('string', 'Date');
   data.addColumn('number', 'Price');
@@ -11,19 +12,15 @@ function drawChart() {
 }
 
 
-
-
 $(document).ready(function() {
 
   window.onresize = function() {
     drawChart();
-}
+  }
 
   google.charts.load('current', {
     packages: ['corechart']
   });
   google.charts.setOnLoadCallback(drawChart);
-
-
 
 });
