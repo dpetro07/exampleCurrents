@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!--Google Fonts-->
  <link href='https://fonts.googleapis.com/css?family=Passion+One|Russo+One' rel='stylesheet' type='text/css'>
-
+<link href='https://fonts.googleapis.com/css?family=Philosopher:700|Playfair+Display|Cinzel:400,700,900' rel='stylesheet' type='text/css'>
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
 
@@ -31,7 +31,7 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left col offset-l1"><img src="images/logo.png" width="140"></a>
-        <p class="col l9 offset-l1 m9 s7 navbarHead"> Real-Time and Historical BitCoin Analytics</p>
+        <p class="col l9 offset-l1 m9 s7 navbarHead">Real-Time and Historical BitCoin Analytics</p>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
         </ul>
       </div>
@@ -93,7 +93,7 @@
             <div>
               <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
               <ul id='dropdown1' class='dropdown-content'>
-                <li id="USDCur"><a>USD</a></li>
+                <button id="USDCur" class="fa fa-usd"></button>
                 <li class="divider"></li>
                 <li><a id="GBPCur">GBP</a></li>
                 <li class="divider"></li>
@@ -129,7 +129,14 @@
 <!--Reddit and Twitter-->
 <div class="row">
   <div class="col l8 m7 s12 mainContent news">
-    <h4 class="newsTitle">Current Reddit News</h4>
+      <div id="masthead">
+      <center><img class="nyTimesLogo" src="images/nyTimesLogo2.png" width="379"></center>
+    </div>
+    <div id="output">
+      <div class="row header">
+      </div>
+    </div>
+ <!--   <h4 class="newsTitle">Current Reddit News</h4>
     <section id="reddit" class='reddit single'>
       <section class="sub">
         <section class="thumbs">
@@ -142,7 +149,7 @@
         </section>
         <section class="combined">
         </section>
-      </section>
+      </section> -->
   </div>
   <div class="col l4  m5 s12 tweets">
     <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
@@ -162,9 +169,9 @@
 </div>
 
 <div class="row">
-  <div class="col l12">
+  <div class="col l7">
     <div id="masthead">
-          <H1> NYTimes Top Stories</H1>
+          <img class="nyTimesLogo" src="images/nyTimesLogo.png">
     </div>
     <div id="output">
       <div class="row header">
@@ -197,8 +204,8 @@
       <div class="row footerMargin">
         <div class="col l12 footer">
           <img src="images/logo.png" width="140">
-          <h6>Created by Rutgers Coding Bootcamp Students: Sean Conaty, Christian Eckenrode, and Daniel Petro
-          <br>BitCurrents is dedicated to providing real-time and historical Bitcoin data through a variety of open-source applications. As students enrolled in the Rutgers Coding Bootcamp, BitCurrents was created as a group front-end project showcasing the web development tools we have learned so far. </h6>
+          <h5>Created by Rutgers Coding Bootcamp Students: Sean Conaty, Christian Eckenrode, and Daniel Petro</h5>
+          <h6>BitCurrents is dedicated to providing real-time and historical Bitcoin data through a variety of open-source applications. As students enrolled in the Rutgers Coding Bootcamp, BitCurrents was created as a group front-end project showcasing the web development tools we have learned so far. </h6>
           <h7 > Programming languages used: HTML, CSS, Javascript, jQuery, Ajax, Bootstrap, and MaterializeCSS.
           <br>API's used: Coindesk, The New York Times, Reddit, Google Charts, Twitter and Youtube widgets.</h7>
         </div>
@@ -223,9 +230,10 @@
   <script type="text/javascript" src="js/coindeskAPIHistorical.js"></script>
   <script type="text/javascript" src="js/googleCharts.js"></script>
   <script type="text/javascript" src='js/reddit.js'></script>
+  <script type="text/javascript" src='js/nytimes.js'></script>
   <script type="text/javascript" src="js/bootbox.min.js"></script>
   <script type="text/javascript" src="js/navbar.js"></script>
-  <script type="text/javascript" src="js/nytimes.js"></script>
+
 
   <!-- Latest compiled and minified JavaScript -->
   <!-- <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->

@@ -146,12 +146,7 @@ input[type="text"] {
 }
 
 
-/*Reddit*/
-.news {
-  border-style: solid;
-  border-color: #FF9800;
-  background-color: #FFFFFF;
-}
+
 
 .newsTitle {
   color: #000000;
@@ -178,6 +173,11 @@ ul li {
   background-color: #FFFFFF;
   box-shadow: 3px 3px .5em #000000;
   color: #000000;
+
+}
+
+h5, h6, h7 {
+  font-family: sans-serif;
 }
 
 .page-footer {
@@ -203,4 +203,45 @@ footer.page-footer {
 
 .footerMargin {
   margin-bottom: 0px;
+}
+
+/* New York Times Section */
+.nyTimesLogo {
+  margin-top: 10px;
+}
+
+.news {
+  border-style: solid;
+  border-color: #FF9800;
+  background-color: #FFFFFF;
+}
+.nyTimesHeader {
+  color: #263248;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5em;
+  border-style: solid;
+  border-color: #ccc;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.nyTimesRowhead {
+  background-color: white;
+  margin-bottom: 0;
+  border-style: solid;
+  border-color: #ccc;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.nyTimesBody {
+  font-family: 'Playfair Display', serif;
+}
+
+.photo {
+  border-style: solid;
+  border-color: black;
 }
