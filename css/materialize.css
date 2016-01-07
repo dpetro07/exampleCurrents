@@ -72,7 +72,7 @@ h1 {
 /* Google Charts */
 .charts {
   border-style: solid;
-  border-color: #FFFFFF;
+  border-color: #263248;
   background-color: #FFFFFF;
   box-shadow: 4px 4px .5em #000000;
 }
@@ -157,13 +157,7 @@ input[type="text"] {
   color: #263248;
 }
 
-ul li {
-  border-style: solid;
-  border-color: #263248;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-}
+
 
 
 /* Footer */
@@ -210,10 +204,10 @@ footer.page-footer {
   margin-top: 10px;
 }
 
-.news {
-  border-style: solid;
-  border-color: #FF9800;
+.nyTimes {
+
   background-color: #FFFFFF;
+  box-shadow: 5px 5px .5em #000000;
 }
 .nyTimesHeader {
   color: #263248;
@@ -244,4 +238,13 @@ footer.page-footer {
 .photo {
   border-style: solid;
   border-color: black;
+}
+
+/* Reddit */
+ul li {
+  border-style: solid;
+  border-color: #000000;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
 }
