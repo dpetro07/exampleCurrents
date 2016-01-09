@@ -8,13 +8,19 @@ nav {
   background-color: #263248;
 }
 
-.navbarHead {
-  font-size: .9em;
+.navbarHeader {
+  font-size: 2em;
   font-family: 'Passion One', cursive;
+
 }
 
 .navbarL {
   margin-bottom: 3px;
+}
+
+.brand-logo {
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -257,10 +263,5 @@ ul li {
   background-color: #FFFFFF;
 }
 
-* {
-  font-family: 'Roboto Condensed', sans-serif;
-}
 
-.newsTitle {
-  font-family: 'Roboto Condensed', sans-serif;
-}
+
