@@ -37,6 +37,7 @@
       </div>
     </nav>
   </div>
+  <!-- End: Navbar -->
 <!-- Current Bitcoin Prices -->    
         <div class="row pricingColor">
           <div class="col l2 offset-l1 m4 s12" ><p class="currencyName">British Pound</p>
@@ -61,18 +62,73 @@
             </h4>
           </div>
         </div>
+        <!-- End: Current Bitcoin Prices -->
+
+<!--New York Times and Twitter -->
+<!--New York Times-->
+<div class="row">
+  <div class="col l7 offset-l1 m7 s12 mainContent nyTimes" style="margin-left: 20px">
+      <div id="masthead">
+      <center><img class="nyTimesLogo" src="images/nyTimesLogo2.png" width="379"></center>
+    </div>
+    <div id="output">
+      <div class="row header">
+      </div>
+    </div>
+  </div>
+  <!-- End: New York Times -->
+  <!-- Twitter -->
+  <div class="col l4 m4 s12" style="margin-left: 30px">
+<div class="tweets">
+    <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
+    <script>
+      ! function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+          p = /^http:/.test(d.location) ? 'http' : 'https';
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = p + "://platform.twitter.com/widgets.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      }(document, "script", "twitter-wjs");
+    </script>
+  </div>
+
+    <div class="reddit">
+        <h4 class="newsTitle">Current Reddit News</h4>
+          <section id="reddit" class='reddit single'>
+            <section class="sub">
+              <section class="thumbs">
+              </section>
+                  <ul class="posts">
+                  </ul>
+                <section class="titles">
+                  <ul class="urls">
+                  </ul>
+                </section>
+                <section class="combined">
+                </section>
+            </section>
+          </section>
+    </div>
+
+</div>
+<!-- End: Twitter -->
+
+
+
+
 
 
 
 <!--Google Charts-->
-
   <div class="row ">
     <div class="col l7 offset-l1 m7 s12 charts">
       <div class="priceCharts">
         <h3 class="title">Historical Pricing</h3>
         <div id="myLineChart"></div>
       </div>
-
       <div class="container">
         <div class="row">
           <div class="dateRange">
@@ -80,16 +136,11 @@
             <div class="col l6 m6">
               <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
             </div>
-
           <div class="row">
             <div class="col l6 m6">
               <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
             </div>
           </div>
-
-
-
-
             <div>
               <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
               <ul id='dropdown1' class='dropdown-content'>
@@ -104,6 +155,7 @@
         </div>
       </div>
     </div>
+    <!-- End: Google Charts -->
 
 <!-- Currency Converter -->
     <div class="col l2 offset-l1 m5 s12">
@@ -124,36 +176,9 @@
       </div>
     </div>
   </div>
+  <!-- End: Currency Converter -->
 
 
-<!--Reddit and Twitter-->
-<div class="row">
-  <div class="col l8 m7 s12 mainContent nyTimes">
-      <div id="masthead">
-      <center><img class="nyTimesLogo" src="images/nyTimesLogo2.png" width="379"></center>
-    </div>
-    <div id="output">
-      <div class="row header">
-      </div>
-    </div>
-  </div>
-  <div class="col l4  m5 s12 tweets">
-    <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
-    <!-- Twitter -->
-    <script>
-      ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + "://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, "script", "twitter-wjs");
-    </script>
-  </div>
-</div>
 
 
 <!--Youtube Videos-->
@@ -175,25 +200,7 @@
       </div>
     </div>
 
-<!-- Reddit -->
-    <div class="col l6s">
-        <h4 class="newsTitle">Current Reddit News</h4>
-          <section id="reddit" class='reddit single'>
-            <section class="sub">
-              <section class="thumbs">
-              </section>
-                  <ul class="posts">
-                  </ul>
-                <section class="titles">
-                  <ul class="urls">
-                  </ul>
-                </section>
-                <section class="combined">
-                </section>
-            </section>
-          </section>
-    </div>
-  </div>
+
 
   <br>
 
