@@ -89,7 +89,7 @@ $.ajax(
      
         //$("#reddit .titles").append(subredditOption);
         //$("#reddit .urls").append(links);
-        $("#reddit .combined").append(combo);
+        $("#bitcoinSubreddits").append(combo);
         $("#reddit .text").append(allSubredditComments);
     }
   }

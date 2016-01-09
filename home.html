@@ -29,7 +29,7 @@
 <!-- Navbar -->
   <nav>
     <div class="nav-wrapper">
-     <a href="#!" class="brand-logo"><img src="images/logo.png" width="140"></a>
+     <a href="#!" class="brand-logo"><img src="images/logo.png" width="140" style="margin-left: 20px;"></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#twitter" class="fa fa-twitter-square fa-2x"></a></li>
@@ -39,10 +39,10 @@
         <li><a href="mobile.html"></a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="#twitter" class="fa fa-twitter-square fa-2x"></a></li>
-        <li><a href="#reddit" class="fa fa-reddit-square fa-2x"></a></li>
-        <li><a href="#lineChart" class="fa fa-line-chart fa-2x"></a></li>
-        <li><a href="#youtube" class="fa fa-youtube-square fa-2x"></a></li>
+        <li><a href="#twitter" class="fa fa-twitter-square fa-2x"></a>Twitter</li>
+        <li><a href="#reddit" class="fa fa-reddit-square fa-2x"></a>Reddit</li>
+        <li><a href="#lineChart" class="fa fa-line-chart fa-2x"></a>Currency Chart</li>
+        <li><a href="#youtube" class="fa fa-youtube-square fa-2x"></a>Youtube</li>
       </ul>
     </div>
   </nav>
@@ -50,37 +50,38 @@
 
 
 
-<!-- Current Bitcoin Prices -->    
-        <div class="row pricingColor">
-          <div class="col l2 offset-l1 m4 s12" ><p class="currencyName">British Pound</p>
-            <h4 class="currentPricingL">
-              <span id="currentPriceGBP"></span>
-              <br>
-              <span id="GBPPriceDiff"></span>
-            </h4>
-          </div>
-          <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">US Dollar</p>
-            <h4 class="currentPricingL">
-              <span id="currentPriceUSD"></span>
-              <br>
-              <span id="USDPriceDiff"></span>
-            </h4>
-          </div>
-          <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">Euro</p>
-            <h4 class="currentPricingL">
-              <span id="currentPriceEUR"></span>
-              <br>
-              <span id="EURPriceDiff"></span>
-            </h4>
-          </div>
-        </div>
-        <!-- End: Current Bitcoin Prices -->
+<!-- Current Bitcoin Prices --> 
+  <div class="row pricingColor">
+    <div class="col l2 offset-l1 m4 s12" ><p class="currencyName">British Pound</p>
+      <h4 class="currentPricingL">
+        <span id="currentPriceGBP"></span>
+<br>
+        <span id="GBPPriceDiff"></span>
+      </h4>
+    </div>
+    <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">US Dollar</p>
+      <h4 class="currentPricingL">
+        <span id="currentPriceUSD"></span>
+<br>
+        <span id="USDPriceDiff"></span>
+      </h4>
+    </div>
+    <div class="col l2 offset-l2 m4 s12" ><p class="currencyName">Euro</p>
+        <h4 class="currentPricingL">
+          <span id="currentPriceEUR"></span>
+<br>
+          <span id="EURPriceDiff"></span>
+        </h4>
+    </div>
+  </div>
+<!-- End: Current Bitcoin Prices -->
 
 <!--New York Times, Twitter, and Reddit -->
 <!--New York Times-->
+
 <div class="row">
-  <div class="col l7 offset-l1 m7 s12 mainContent nyTimes" style="margin-left: 20px">
-      <div id="masthead">
+  <div class="col l7 offset-l1 m7 s12 mainContent nyTimes " style="margin-left: 20px">
+    <div id="masthead">
       <center><img class="nyTimesLogo" src="images/nyTimesLogo2.png" width="379"></center>
     </div>
     <div id="output">
@@ -91,127 +92,116 @@
   <!-- End: New York Times -->
   <!-- Twitter -->
   <div class="col l4 m4 s12" style="margin-left: 30px">
-<div id="twitter" class="tweets">
-    <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
-    <script>
-      ! function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0],
-          p = /^http:/.test(d.location) ? 'http' : 'https';
-        if (!d.getElementById(id)) {
-          js = d.createElement(s);
-          js.id = id;
-          js.src = p + "://platform.twitter.com/widgets.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }
-      }(document, "script", "twitter-wjs");
-    </script>
-  </div>
-  <!-- End: Twitter -->
-<br>
-<!-- Reddit -->
-    <div id="reddit" class="reddit">
-         <center><img class="redditLogo" src="images/redditLogo.png" width="150"></center>
-          <section id="reddit" class='reddit single'>
-            <section class="sub">
-              <section class="thumbs">
-              </section>
-                  <ul class="posts">
-                  </ul>
-                <section class="titles">
-                  <ul class="urls">
-                  </ul>
-                </section>
-                <section class="combined">
-                </section>
-            </section>
-          </section>
+    <div id="twitter" class="tweets">
+      <a class="twitter-timeline" href="https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed" data-widget-id="682335870863605763">Tweets from https://twitter.com/BitCurrents/lists/current-bitcoin-news-feed</a>
+      <script>
+        ! function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0],
+            p = /^http:/.test(d.location) ? 'http' : 'https';
+          if (!d.getElementById(id)) {
+            js = d.createElement(s);
+            js.id = id;
+            js.src = p + "://platform.twitter.com/widgets.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }
+        }(document, "script", "twitter-wjs");
+      </script>
     </div>
-  <!--End: Reddit -->
-  <!--End: New York Times, Twitter, and Reddit -->
-
-
-
-
-
-
-
-<!--Google Charts-->
-  <div class="row ">
-    <div class="col l7 offset-l1 m7 s12 charts">
-      <div id="lineChart" class="priceCharts">
-        <h3 class="title">Historical Pricing</h3>
-        <div id="myLineChart"></div>
+    <!-- End: Twitter -->
+    <br>
+    <!-- Reddit -->
+    <div id="reddit" class="reddit">
+      <center><img class="redditLogo" src="images/redditLogo.png" width="150"></center>
+      <div id="reddit" class='reddit redditInfo'>
+        <div class="sub">
+          <div class="thumbs">
+          </div>
+          <ul class="posts">
+          </ul>
+          <div class="titles">
+            <ul class="urls">
+            </ul>
+          </div>
+          <div class="combined">
+          </div>
+        </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="dateRange">
-            <h4 class="title">Date Range</h4>
-            <div class="col l6 m6">
-              <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
-            </div>
+    </div>
+<!--End: Reddit -->
+<br>
+<div id="youtube" class="youtube">
+          <iframe class="col l6" src="https://www.youtube.com/embed/cFj72hrUZt4" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube">
+          <iframe class="col l6" src="https://www.youtube.com/embed/j7opj5-32hw" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube">
+          <iframe class="col l6" src="https://www.youtube.com/embed/2UC_8NdR1To" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="youtube">
+          <iframe class="col l6" src="https://www.youtube.com/embed/l9jOJk30eQs" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+  </div>
+</div>
+<!--End: Reddit -->
+<!--End: New York Times, Twitter, and Reddit -->
+<!--Google Charts-->
+<div class="row ">
+  <div class="col l7 m7 s12 charts" style="margin-left: 20px;">
+    <div id="lineChart" class="priceCharts">
+      <h3 class="title">Historical Pricing</h3>
+      <div id="myLineChart"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="dateRange">
+          <h4 class="title">Date Range</h4>
+          <div class="col l6 m6">
+            <input type="text" class="form-control date-pick" id="startingDate" placeholder="Starting Date">
+          </div>
           <div class="row">
             <div class="col l6 m6">
               <input type="text" class="form-control date-pick" id="endingDate" placeholder="Ending Date">
             </div>
           </div>
-            <div>
-              <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
-              <ul id='dropdown1' class='dropdown-content'>
-                <li id="USDCur"><a>USD</a></li>
-                <li class="divider"></li>
-                <li><a id="GBPCur">GBP</a></li>
-                <li class="divider"></li>
-                <li><a id="EURCur">EUR</a></li>
-              </ul>
-            </div>
+          <div>
+            <a class='dropdown-button btn' data-activates='dropdown1'><span id="historicalCurrency">Pick a Currency</span><span class="caret"></span></a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li id="USDCur"><a>USD</a></li>
+              <li class="divider"></li>
+              <li><a id="GBPCur">GBP</a></li>
+              <li class="divider"></li>
+              <li><a id="EURCur">EUR</a></li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
-    <!-- End: Google Charts -->
-
+  </div>
+<!-- End: Google Charts -->
 <!-- Currency Converter -->
-    <div class="col l2 offset-l1 m5 s12">
-      <div class="priceConverter">
-        <h3 class="title">Currency Converter</h3>
-        <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
-        <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
-        <div class="btn-group">
+  <div class="col l2 offset-l1 m4 s12">
+    <div class="priceConverter">
+      <h3 class="title">Currency Converter</h3>
+      <input type="text" class="form-control decimal" placeholder="Bitcoin" id="bitCoinStarting" value="">
+      <input type="text" class="form-control decimal" placeholder="Currency" id="realCurrency" value="">
+      <div class="btn-group">
         <a class='dropdown-button btn' href='#' data-activates='dropdown2'><span id="selectedCurrency">USD</span><span class="caret"></span></a>
-          <ul id='dropdown2' class='dropdown-content'>
-            <li id="USDConvert"><a>USD</a></li>
-            <li class="divider"></li>
-            <li><a id="GBPConvert">GBP</a></li>
-            <li class="divider"></li>
-            <li><a id="EURConvert">EUR</a></li>
-          </ul>
-        </div>
+        <ul id='dropdown2' class='dropdown-content'>
+          <li id="USDConvert"><a>USD</a></li>
+          <li class="divider"></li>
+          <li><a id="GBPConvert">GBP</a></li>
+          <li class="divider"></li>
+          <li><a id="EURConvert">EUR</a></li>
+        </ul>
       </div>
     </div>
   </div>
-  <!-- End: Currency Converter -->
+</div>
+<!-- End: Currency Converter -->
 
 
-
-
-<!--Youtube Videos-->
-<div class="container">
-  <div id="youtube" class="row">
-    <div class="col l6">
-        <div class="youtube">
-          <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/cFj72hrUZt4" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="youtube">
-          <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/j7opj5-32hw" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="youtube">
-          <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/2UC_8NdR1To" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="youtube">
-          <iframe class="col l3 m6 s12" width="560" height="315" src="https://www.youtube.com/embed/l9jOJk30eQs" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
 
 
 
